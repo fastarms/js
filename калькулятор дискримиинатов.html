@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>дискриминаты</title>
+	<style>
+		div{
+			margin-top: 30px; 
+			margin-left: 30px;
+		}
+		input, p{
+			display: inline-block;
+			font-size: 30px;
+			text-align: center;
+			margin:2px;
+		}
+		.ch{
+			width: 100px;
+			border: 3px solid green;
+			border-radius: 10px;
+		}
+		.zn{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			border: 3px solid green;
+		}
+	</style>
+</head>
+<body>
+<div>
+<input type="number" name="fast" class="ch" id="aa"><p>x²</p>
+<input type="number" name="fast" class="ch" id="bb"><p>x</p>
+<input type="number" name="fast" class="ch" id="cc"><p>=</p>
+<input type="number" name="fast" class="ch" id="raww" value="0">
+<input type="button" name="fast" value="ОТВЕТ" id="otv"><br>
+<p id='root1'>1 root</p><p>|</p><p id='root2'>2 root</p></div>
+<script>
+	otv.onclick=function(){
+		var a=aa.value;
+		var b=bb.value;
+		var c=cc.value;
+		var raw=raww.value;
+		var D=b*b-4*a*c;
+		var x1= (-b+Math.sqrt(D))/2;
+		var x2= (-b-Math.sqrt(D))/2;
+		if(D>0){
+			root1.innerHTML=x1;
+			root2.innerHTML=x2;
+			}
+		if(D==0){
+			root1.innerHTML=x1;
+			root2.innerHTML="";
+		}
+		if(D<0){
+			root1.innerHTML="РЕШЕНИЙ НЕТ";
+			root2.innerHTML="";
+		}
+	};
+</script>
+</body>
+</html>

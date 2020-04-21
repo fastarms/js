@@ -5,7 +5,6 @@
 	<title>cir</title>
 	<style type="text/css">
 		input{
-			background: red;
 			border-radius: 50%;
 		}
 		#time{
@@ -17,33 +16,37 @@
 	</style>
 </head>
 <body>
-	<input type="button" id="asd">
+<input type="button" id="asd">
 <p id="time"></p>
 <script type="text/javascript">
+colors=['lightgreen', 'lightblue', 'red', 'brown', 'pink', '#7CFC00', '#40E0D0',
+ '0B2AA', '#000080', '#8A2BE2',  '#FF00FF', '#CD5C5C', '#F0E68C', '	#228B22', '#AFEEEE',
+  '#BA55D3', '#DA70D6', '#696969', '#3CB371', '#FF1493', '#228B22']
 t=40
 x=10
 y1= Math.random() * (1580 - 20) + 20;
 y2= Math.random() * (880 - 20) + 20;
-function createBall(x, y1, y2){
+a=2
+function createBall(x, y1, y2, a){	
+	asd.style.background=`${colors[a]}`
 	asd.style.height=`${x}px`
 	asd.style.width=`${x}px`
 	asd.style.marginLeft=`${y1/2}px`
 	asd.style.marginTop=`${y2/2}px`
-	if (x==60) {alert('defeat'); t=40}
+	if (x==60) {alert('defeat'); location.reload()}
 }
 
 
 setInterval(() => time.innerHTML=`${t--}`, 1000);
 
-setInterval(() => createBall(x+=1, y1-=1, y2-=1), 20);
-asd.onclick=function(){
-	asd.style.display="none"
+setInterval(() => createBall(x+=1, y1-=1, y2-=1, a), 20);
+asd.onclick=function(){	
 	x=10
-	if (t<0) {alert('win'); t=40}
+	if (t<0) {alert('win'); location.reload()}
+	a=Math.floor(Math.random() * (colors.length - 0) + 0)
 	y1= Math.random() * (1580 - 20) + 20;
 	y2= Math.random() * (880 - 20) + 20;
-	createBall(x+=1, y1-=1, y2-=1)
-	asd.style.display="block"
+	createBall(x+=1, y1-=1, y2-=1, a)	
 }
 </script>
 </body>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>АУК</title>
+	<style type="text/css">
+		body{
+			background: url("https://images.wallpaperscraft.ru/image/kraska_raznotsvetnyj_nalozhenie_139992_1920x1080.jpg");
+			}
+		header{
+			background: #9932CC;
+			color: white;
+			margin-left:-8px; 
+			margin-top: -8px;
+			width: 100.83%;
+			height: 50px;
+			}
+		p{
+			padding: 12px;
+			font-size: 25px;
+			display: inline-block;
+			margin-top: 0px;
+		}	
+			
+		.logo{
+			height: 25px; 
+		}
+		.first{
+			margin-top: 20px;
+		}
+		.in{
+			height: 40px;
+			font-size: 30px;
+			margin-right: 5px;
+			text-align: right;
+		}
+		.p1{
+			width: 50%;
+		}
+		.p2, .p3{
+			width: 120px;
+		}
+		.but1{
+			background:inherit;
+			position: relative;
+			top:0px;
+			left:5px;
+			width: 40px;
+			height: 40px;			
+			border-radius: 50%;
+			border: 0px; 
+			font-size: 30px;
+		}
+		.but1:hover{
+			background: black;
+			color:white;
+		}
+		.time{
+			position: absolute;
+			right: 0px;
+			top:70px;
+			border-top:2px solid white;
+			border-bottom:2px solid white;
+			width: 25%;
+			height: 350px;
+			background: #9932CC;
+		}
+		.but22{
+			position: relative;
+			left: 40px;
+			top: 30px;
+			color: white;
+			background: #2F4F4F;
+			border: none;
+			width: 110px;
+			height: 30px;
+		}
+		.but33{
+			position: relative;
+			left: 70px;
+			top: 30px;
+			color: white;
+			background: #2F4F4F;
+			border: none;
+			width: 110px;
+			height: 30px;
+		}
+		.but44{
+			position: relative;
+			left: 100px;
+			top: 30px;
+			color: white;
+			background: #2F4F4F;
+			border: none;
+			width: 110px;
+			height: 30px;
+		}
+		.but55{
+			position: relative;
+			left: -250px;
+			top: 280px;
+			color: white;
+			background: green;
+			border: none;
+			width: 110px;
+			height: 30px;
+		}
+		.but66{
+			position: relative;
+			left: 300px;
+			top: 250px;
+			color: white;
+			background: red;
+			border: none;
+			width: 110px;
+			height: 30px;
+		}
+		input{
+			border-radius: 10px; 
+		}
+		.tim{
+			position: absolute;
+			right: 60px;
+			top: 150px;
+			color:white;
+			font-size: 140px;
+		}
+	</style>
+</head>
+<body>
+<header><p><img src="logo.png" class="logo"> АУКЦИОН</p>
+</header>
+<div class="first">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="firf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="firt">
+	<input type="button" name="but1" value="+" class="but1" id="but1">
+</div>
+<script>
+but1.onclick=function(){	
+	var su=firf.value;
+	var us=firt.value;	
+	firf.value=Number(su)+Number(us);
+	firt.value="";
+}
+</script>
+<div class="two">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="twof"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="twot">
+	<input type="button" name="but1" value="+" class="but1" id="but2">
+</div>
+<script>
+but2.onclick=function(){	
+	var su=twof.value;
+	var us=twot.value;	
+	twof.value=Number(su)+Number(us);
+	twot.value="";
+}
+</script>
+<div class="three">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="thrf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="thrt">
+	<input type="button" name="but1" value="+" class="but1" id="but3">
+</div>
+<script>
+but3.onclick=function(){	
+	var su=thrf.value;
+	var us=thrt.value;	
+	thrf.value=Number(su)+Number(us);
+	thrt.value="";
+}
+</script>
+<div class="four">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="fouf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="fout">
+	<input type="button" name="but1" value="+" class="but1" id="but4">
+</div>
+<script>
+but4.onclick=function(){	
+	var su=fouf.value;
+	var us=fout.value;	
+	fouf.value=Number(su)+Number(us);
+	fout.value="";
+}
+</script>
+<div class="five">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="fivf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="fivt">
+	<input type="button" name="but1" value="+" class="but1" id="but5">
+</div>
+<script>
+but5.onclick=function(){	
+	var su=fivf.value;
+	var us=fivt.value;	
+	fivf.value=Number(su)+Number(us);
+	fivt.value="";
+}
+</script>
+<div class="six">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="sixf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="sixt">
+	<input type="button" name="but1" value="+" class="but1" id="but6">
+</div>
+<script>
+but6.onclick=function(){	
+	var su=sixf.value;
+	var us=sixt.value;	
+	sixf.value=Number(su)+Number(us);
+	sixt.value="";
+}
+</script>
+<div class="seven">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="sevf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="sevt">
+	<input type="button" name="but1" value="+" class="but1" id="but7">
+</div>
+<script>
+but7.onclick=function(){	
+	var su=sevf.value;
+	var us=sevt.value;	
+	sevf.value=Number(su)+Number(us);
+	sevt.value="";
+}
+</script>
+<div class="eith">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="eigf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="eigt">
+	<input type="button" name="but1" value="+" class="but1" id="but8">
+</div>
+<script>
+but8.onclick=function(){	
+	var su=eigf.value;
+	var us=eigt.value;	
+	eigf.value=Number(su)+Number(us);
+	eigt.value="";
+}
+</script>
+<div class="nine">
+	<input type="text" name="firstname" class="in p1"><p>-</p>
+	<input type="number" name="firstmoney" class="in p2" id="ninf"><p>P</p>
+	<input type="number" name="firstmoney2" class="in p3" id="nint">
+	<input type="button" name="but1" value="+" class="but1" id="but9">
+</div>
+<script>
+but9.onclick=function(){	
+	var su=ninf.value;
+	var us=nint.value;	
+	ninf.value=Number(su)+Number(us);
+	nint.value="";
+}
+</script>
+<div class="time">
+	<input type="button" name="but2" value="+1" class="but22" id="but22">
+	<input type="button" name="but2" value="+2" class="but33" id="but33">
+	<input type="button" name="but2" value="=10" class="but44" id="but44">
+	<input type="button" name="but2" value="СТАРТ" class="but55" id="but55">
+	<input type="button" name="but2" value="СБРОС" class="but66" id="but66">
+</div>
+<p class="tim" id="asd"></p>
+<script>
+
+var min=10;
+var sec=String(0) + 0;//
+asd.innerHTML= min + ":" + sec;
+frame=1000;
+function se(){	
+	if (min>0){
+		if (sec==0){
+			sec+=60;
+			min-=1;
+		};
+	};			
+	sec-=1;	
+	if (sec<10){
+		sec = String(0) + sec;
+	};
+	if (min == String(0) +  0){
+		if (sec == String(0) + 0){
+			clearInterval(stopp)
+		}
+	}
+	asd.innerHTML= min + ":" + sec;	
+};
+function stop(){
+	sec=0;
+	asd.innerHTML= min + ":" + sec;	
+}
+but22.onclick=function(){
+	min+=1;
+	asd.innerHTML= min + ":" + sec;	
+};
+but33.onclick=function(){
+	min+=2;
+	asd.innerHTML= min + ":" + sec;	
+};
+but44.onclick=function(){
+	min=10;
+	sec=String(0) + 0;
+	asd.innerHTML= min + ":" + sec;
+};
+but55.onclick=function(){
+	stopp=setInterval(se, frame);
+	asd.innerHTML= min + ":" + sec;	
+};
+but66.onclick=function(){
+	min=String(0) + 0;
+	sec=String(0) + 0;
+	clearInterval(stopp);
+	asd.innerHTML= min + ":" + sec;
+};
+</script>
+</body>
+</html>

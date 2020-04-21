@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Бомжара</title>
+	<style type="text/css">
+		body{
+			background: lightgray;
+		}
+		.nast{
+			width: 30px;
+			height: 900px;
+			background: gray;
+			border: 1px solid black;
+			border-radius: 10px; 
+			position: fixed;
+			left: 0px;
+			bottom: 0px;
+			text-align: center;
+			font-size: 30px;
+		}
+		.na{
+			position: fixed;
+			top: 480px;
+			left: 2px;
+			font-size: 30px;
+		}
+		#nastgray{
+			width: 30px;
+			height: 800px;
+			background: linear-gradient(#FF4500, #B8860B);
+			border: none;
+			border-radius: 10px; 
+			position: fixed;
+			left: 1px;
+			bottom: 1px;
+			text-align: center;
+			font-size: 30px;
+		}
+		.hp{
+			width: 100%;
+			height: 30px;
+			background: gray;
+			border: 1px solid black;
+			border-radius: 10px; 
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		.se{
+			position: fixed;
+			top:-32px;
+			left: 50%;
+			font-size: 30px;
+		}
+		#hpgray{
+			width: 40%;
+			height: 30px;
+			background: linear-gradient(#FF4500, #B8860B);
+			border-radius: 10px; 
+			position: fixed;
+			left: 1px;
+			top: 1px;
+			font-size: 30px;
+		}
+		.eat{
+			width: 30px;
+			height: 900px;
+			background: gray;
+			border: 1px solid black;
+			border-radius: 10px; 
+			position: fixed;
+			right: 0px;
+			bottom: 0px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.ea{
+			position: fixed;
+			top: 480px;
+			right: 0px;
+			font-size: 25px;
+		}
+		#eatgray{
+			width: 30px;
+			height: 800px;
+			background: linear-gradient(#FF4500, #B8860B);			
+			border-radius: 10px; 
+			position: fixed;
+			right: 1px;
+			bottom: 1px;
+			font-size: 25px;
+		}
+		.home{
+			position: absolute;
+			left: 40px;
+			top: 25px;
+			margin-top: 20px;
+		}
+		.pol{
+			display: inline-block;
+			margin-left: 5px;
+			width: 105px;
+			border: 1px solid black;
+			border-radius: 5px; 
+			text-align: center;
+			background: #D2B48C;
+			margin-top: -5px;
+		}
+		.full{
+			width: 218px;
+			border: 1px solid black;
+			margin-top: -5px;
+			margin-left: 5px;
+			background: #D2B48C;
+			border-radius: 10px;
+			text-align: center;
+			height: 30px;
+		}
+		.fulll{
+			margin-top: 4px;
+			font-size: 20px;
+		}
+		.kurs{
+			margin-top: 10px;
+		}
+		.but{
+			background: linear-gradient(gray, lightblue);
+			margin-top: 4px;
+		}
+		.but:hover{
+			background: linear-gradient(lightblue, gray);
+		}
+		.pri{
+			margin-top: 10px;
+		}
+		.blok{
+			position: relative;
+			display: inline-block;
+		}
+		.eatnast{
+			position: absolute;
+			left: 280px;
+			top: 33px;
+		}
+		.hit{
+			position: absolute;
+			left: 520px;
+			top: 33px;
+		}
+		.bomz{
+			position: absolute;
+			top: 33px;
+			left: 760px;
+		}
+		.work{
+			position: absolute;
+			top: 33px;
+			left: 1000px;
+		}
+		.work2{
+			position: absolute;
+			top: 1033px;
+			left: 1000px;
+		}
+		.learait{
+			position: absolute;
+			top: 33px;
+			left: 1240px;
+		}
+		.self{
+			position: absolute;
+			top: 0px;
+			left: 240px;
+		}
+		.vlad{
+			position: absolute;
+			left: 40px;
+			top: 780px;
+		}
+		.buis{
+			position: absolute;
+			left: -960px;
+			top: 423px;
+		}
+		.polit{
+			position: absolute;
+			left: -720px;
+			top: 500px;
+		}
+		.roll{
+			position: absolute;
+			left: -480px;
+			top: 400px;
+		}
+		.jjppgg{
+			width: 218px;
+			border-radius: 10px; 
+			text-align: center;
+			margin-left: 5px; 
+		}
+		.inli{
+			display: inline-block;
+			font-size: 30px;
+		}
+		.nn{
+			background: orange;
+			border-radius: 15px;
+			margin-top: 2px; 
+		}
+		.zero{
+			background: green;
+			border-radius: 15px;
+		}
+		.red{
+			background: red;
+			border-radius: 15px;
+			margin-top: 2px;
+		}
+		.black{
+			background: gray;
+			border-radius: 15px;
+			margin-top: 2px;
+		}
+		#vozrast{
+			height: 36px;
+			position: relative;
+			top: -18px;
+			margin-bottom: -5px;
+		}
+		.hidden{
+			position: absolute;
+			right: -150px;
+			bottom: 150px; 
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div class="nast"></div><div id="nastgray"></div><p class="na">☹</p>
+<div class="hp"></div><div id="hpgray"></div><p class="se">♥</p>
+<div class="eat"></div><div id="eatgray"></div><p class="ea">🍉</p>
+<div class="home">
+	<div class="inl"><p class="pol" id="vozrast">Возраст</p><p class="pol" id="older">Лет: <span id="kolvolet">20</span><br>
+	Дней: <span id="kolvodney">0</span></p></div>
+	<div class="inl"><p class="pol">Здоровье</p><p class="pol" id="hpg">50</p></div>
+	<div class="inl"><p class="pol">Настроение</p><p class="pol" id="nastroj">50</p></div>
+	<div class="inl"><p class="pol">Голод</p><p class="pol" id="hung">50</p></div>
+	<div class="inl"><p class="pol">Рубли</p><p class="pol" id="rub">0</p></div>
+	<div class="inl"><p class="pol">$</p><p class="pol" id="doll">0</p></div>
+	<div class="inl"><p class="pol">Бутылки</p><p class="pol" id="buttt">0</p></div>
+	<div class="inl"><p class="pol">Транспорт</p><p class="pol" id="auto">Босиком</p></div>
+	<div class="inl"><p class="pol">Недвижимость</p><p class="pol" id="home">Коробка</p></div>
+	<div class="inl"><p class="pol">Рейтинг</p><p class="pol" id="rait">5</p></div>
+	<div class="inl"><p class="pol">Статус</p><p class="pol" id="stat">Бомж</p></div>
+	<div class="inl"><p class="pol">Время года</p><p class="pol" id="wssf">Зима</p></div>
+	<div class="full"><p class="fulll">Обмен валюты</p></div>
+	<div class="inl kurs"><p class="pol">Курс</p><p class="pol" id="velkurs">40</p></div>
+	<input type="number" name="asd" class="but full" value="1" id="velkur"><br>
+	<input type="button" name="asd" class="but pol" value="Купить" id="baydol">
+	<input type="button" name="asd" class="but pol" value="Продать" id="paydol"><br>
+	<input type="button" name="asd" class="but pol" value="Купить на все" id="bayalldol">
+	<input type="button" name="asd" class="but pol" value="Продать на все" id="payalldol">
+	<div class="full pri"><p class="fulll">Прием бутылок</p></div>
+	<div class="inl kurs"><p class="pol">Курс</p><p class="pol" id="kursbut">3</p></div>
+	<input type="number" name="qad" class="but full" value="1" id="velkurbut"><br>
+	<input type="button" name="asd" class="but pol" value="Продать все" id="payallbut">
+	<input type="button" name="asd" class="but pol" value="Продать" id="paybut">
+</div>
+<div class="vlad">
+	<div class="full pri"><p class="fulll">Владения</p></div>
+	<input type="button" name="asd" class="but full" value="Купить Ферму($100000)" id="vlad1"><br>
+	<input type="button" name="asd" class="but full" value="Купить Ночной клуб($500000)" id="vlad2"><br>
+	<input type="button" name="asd" class="but full" value="Пропуск дня" id="propusk"><br>
+</div>
+<div class="eatnast">
+	<div class="full pri"><p class="fulll">Еда</p></div>
+	<input type="button" name="asd" class="but full" value="Пожрать на помойке(0)" id="eatzero"><br>
+	<input type="button" name="asd" class="but full" value="Горячая собака(100)" id="eat100"><br>
+	<input type="button" name="asd" class="but full" value="Кафе(500)" id="eat500"><br>
+	<input type="button" name="asd" class="but full" value="Закупиться в магазине(3000)" id="eat3000"><br>
+	<input type="button" name="asd" class="but full" value="Жениться(Семья)" id="eatfamily"><br>
+	<div class="full pri"><p class="fulll">Настроение</p></div>
+	<input type="button" name="asd" class="but full" value="Пиво(50)" id="nast50"><br>
+	<input type="button" name="asd" class="but full" value="Водка(200)" id="nast200"><br>
+	<input type="button" name="asd" class="but full" value="Виски(500)" id="nast500"><br>
+	<input type="button" name="asd" class="but full" value="Коньяк(1500)" id="nast1500"><br>
+	<input type="button" name="asd" class="but full" value="Пить в баре($100/день)" id="nastesterday"><br>
+</div>
+<div class="hit">
+	<div class="full pri"><p class="fulll">Поднять здоровье</p></div>
+	<input type="button" name="asd" class="but full" value="Таблетки с помойки(0)" id="her0"><br>
+	<input type="button" name="asd" class="but full" value="Полечиться у бабки(100)" id="her100"><br>
+	<input type="button" name="asd" class="but full" value="Настоящий доктор(500)" id="her500"><br>
+	<input type="button" name="asd" class="but full" value="Клиника(3000)" id="her3000"><br>
+	<input type="button" name="asd" class="but full" value="Лечиться за границей(50000)" id="her50k"><br>
+	<div class="full pri"><p class="fulll">Занятие спортом</p></div>
+	<input type="button" name="asd" class="but full" value="Совершить пробежку" id="sport"><br>
+	<input type="button" name="asd" class="but full" value="Спортзал(15000/месяц)" id="sportzal"><br>
+	<input type="button" name="asd" class="but full" value="Личный тренер($2000/месяц)" id="sportrener"><br>
+	<div class="full pri"><p class="fulll">Жизнь</p></div>
+	<input type="button" name="asd" class="but full" value="Возраст смерти($1000)" id="olddeath"><br>
+	<input type="button" name="asd" class="but full" value="Таблетка бессмертия($1млрд)" id="immortal"><br>
+	<input type="button" name="asd" class="but full" value="Машина времени($100 млн)" id="cartime"><br>
+</div>
+<div class="bomz">
+	<div class="full pri"><p class="fulll">Бомжатничать</p></div>
+	<input type="button" name="asd" class="but full" value="Во дворе" id="bomz1"><br>
+	<input type="button" name="asd" class="but full" value="В переходе" id="bomz2"><br>
+	<input type="button" name="asd" class="but full" value="У магазина" id="bomz3"><br>
+	<input type="button" name="asd" class="but full" value="В центре" id="bomz4"><br>
+	<div class="full pri"><p class="fulll">Поборы</p></div>
+	<input type="button" name="asd" class="but full" value="Искать мрнеты на улице" id="bomz5"><br>
+	<input type="button" name="asd" class="but full" value="Наехать на собутыльника" id="bomz6"><br>
+	<input type="button" name="asd" class="but full" value="Таксовать на авто" id="bomz7" disabled><br>
+	<input type="button" name="asd" class="but full" value="Ограбить прохожего" id="bomz8" disabled><br>
+	<input type="button" name="asd" class="but full" value="Ограбить банк" id="bomz9" disabled><br>
+</div>
+<div class="work">
+	<div class="full pri"><p class="fulll">Работа</p></div>
+	<input type="button" name="asd" class="but full" value="Мыть машины" id="work1" disabled><br>
+	<input type="button" name="asd" class="but full" value="Мести дворы" id="work2" disabled><br>
+	<input type="button" name="asd" class="but full" value="Работать сантехником" id="work3" disabled><br>
+	<input type="button" name="asd" class="but full" value="Работать на заводе" id="work4" disabled><br>
+	<input type="button" name="asd" class="but full" value="Работать в офисе" id="work5" disabled><br>
+	<input type="button" name="asd" class="but full" value="Управлять компанией" id="work6" disabled><br>
+	<input type="button" name="asd" class="but full" value="Заседать в правительстве" id="work9" disabled><br>
+	<input type="button" name="asd" class="but full" value="Торговать оружием" id="work10" disabled><br>
+	<input type="button" name="asd" class="but full" value="Распределять бюджет" id="work11" disabled><br>
+	<input type="button" name="asd" class="but full" value="Управлять страной" id="work12" disabled><br>
+</div>
+<div class="learait">
+	<div class="learning">
+	<div class="full pri"><p class="fulll">Обучение</p></div>
+	<input type="button" name="asd" class="but full" value="Таблица умножения(150)" id="learn1"><br>
+	<input type="button" name="asd" class="but full" value="Окончить школу(5000)" id="learn2" disabled><br>
+	<input type="button" name="asd" class="but full" value="Окончить ПТУ(25000)" id="learn3" disabled><br>
+	<input type="button" name="asd" class="but full" value="Окончить ВУЗ(200000)" id="learn4" disabled><br>
+	<input type="button" name="asd" class="but full" value="Учиться за границей(1 млн)" id="learn5" disabled><br>
+</div>
+<div class="raitingcal">
+	<div class="full pri"><p class="fulll">Рейтинг</p></div>
+	<input type="button" name="asd" class="but full" value="Затусить в клубе(1000)" id="raiting1"><br>
+	<input type="button" name="asd" class="but full" value="Купить костюм(50000)" id="raiting2"><br>
+	<input type="button" name="asd" class="but full" value="Засветиться на ТВ(150000)" id="raiting3"><br>
+	<input type="button" name="asd" class="but full" value="Снять рекламу($10000)" id="raiting4"><br>
+	<input type="button" name="asd" class="but full" value="Купить конкурентов($5 млн)" id="raiting5"><br>
+</div>
+<div class="self">
+	<div class="full pri"><p class="fulll">Недвижимость</p></div>
+	<input type="button" name="asd" class="but full" value="Купить палатку(500)" id="home1"><br>
+	<input type="button" name="asd" class="but full" value="Снять комнату(15000р/мес)" id="home2"><br>
+	<input type="button" name="asd" class="but full" value="Купить квартиру($300000)" id="home4"><br>
+	<input type="button" name="asd" class="but full" value="Купить офис($1 млн)" id="home5"><br>
+	<input type="button" name="asd" class="but full" value="Купить коттедж($3 млн)" id="home6"><br>
+	<input type="button" name="asd" class="but full" value="Купить виллу($5 млн)" id="home7"><br>
+	<div class="full pri"><p class="fulll">Транспорт</p></div>
+	<input type="button" name="asd" class="but full" value="Купить кроссовки(2000)" id="transp1"><br>
+	<input type="button" name="asd" class="but full" value="Купить велик(10000)" id="transp2"><br>
+	<input type="button" name="asd" class="but full" value="Купить ВАЗ($2000)" id="transp3"><br>
+	<input type="button" name="asd" class="but full" value="Купить крутую маштну($50000)" id="transp4"><br>
+	<input type="button" name="asd" class="but full" value="Купить вертолет($600000)" id="transp5"><br>
+	<input type="button" name="asd" class="but full" value="Купить яхту($2 млн)" id="transp6"><br>
+</div>
+<div class="buis">
+	<div class="full pri"><p class="fulll">Бизнес</p></div>
+	<input type="button" name="asd" class="but full" value="Старший бомж(3000)" id="buis1"><br>
+	<input type="button" name="asd" class="but full" value="Сдать квартиру(+30000р/мес)" id="buis2" disabled><br>
+	<input type="button" name="asd" class="but full" value="Сдать офис($10000р/мес)" id="buis3" disabled><br>
+	<input type="button" name="asd" class="but full" value="Создать соц.сеть($1 млн)" id="buis4"><br>
+	<input type="button" name="asd" class="but full" value="Открыть банк($10 млн)" id="buis5"><br>
+	<div class="full pri"><p class="fulll">Охрана</p></div>
+	<input type="button" name="asd" class="but full" value="Амулет-оберег(15000)" id="ohrana1"><br>
+	<input type="button" name="asd" class="but full" value="Телохранитель($25000/мес)" id="ohrana2"><br>
+	<input type="button" name="asd" class="but full" value="Нанять адвоката($50000/мес)" id="ohrana3"><br>
+</div>
+<div class="polit">
+	<div class="full pri"><p class="fulll">Политика</p></div>
+	<input type="button" name="asd" class="but full" value="Стать депутатом($500000)" id="polit1"><br>
+	<input type="button" name="asd" class="but full" value="Министр обороны($500000)" id="polit2"><br>
+	<input type="button" name="asd" class="but full" value="Министр финансов($500000)" id="polit3"><br>
+	<input type="button" name="asd" class="but full" value="Баллотироваться в президенты" id="polit4"><br>
+	<input type="button" name="asd" class="but full" value="Транзит власти($1 млрд)" id="polit5"><br>
+</div>
+<div class="roll">
+	<div class="full pri"><p class="fulll">Рулетка</p></div>
+	<div class="jjjpppggg"><img src="roll.jpg" class="jjppgg"></div>
+	<input type="button" name="asd" class="but full" value="Ставки сделаны" id="rollgo" disabled><br>
+	<input type="number" name="qad" class="but full" value="1" id="rollsum"><br>
+	<div class="inli">
+	<div class="zero"><input type="radio" name="rolll" value="ZERO" id="zero"checked><label for="zero">ZERO</label></div>
+	<div class="red"><input type="radio" name="rolll" value="red" id="red"><label for="red">Красное</label></div>
+	<div class="black"><input type="radio" name="rolll" value="black" id="black"><label for="black">Черное</label></div>
+	</div>
+	<div class="inli">
+	<div class="nn"><input type="radio" name="rolll" value="1-12" id="firnum"><label for="firnum">1-12</label></div>
+	<div class="nn"><input type="radio" name="rolll" value="13-24" id="twonum"><label for="twonum">13-24</label></div>
+	<div class="nn"><input type="radio" name="rolll" value="25-36" id="threenum"><label for="threenum">25-36</label></div>
+	</div>
+	<div class="hidden">
+		<p id="hiddenferma"></p><p id="hiddennightclub"></p><p id="hiddenfamily"></p><p id="hiddenbar"></p>
+		<p id="hiddenoldbomj"></p><p id="sdathat"></p><p id="sdatoffice"></p><p id="newsociety"></p><p id="openbank"></p>
+		<p id="hiddenamulet"></p><p id="hiddentelohran"></p><p id="hiddenadvokat"></p><p id="hiddenzal"></p>
+		<p id="hiddentrainer"></p><p id="hiddenyearsm">net</p><p id="hiddendaysm">net</p>
+		<p id="hiddenbessmert"></p><p id="hiddenmashvr"></p>
+		<p id="hiddendeputat"></p><p id="hiddenminoboron"></p><p id="hiddenminfin"></p><p id="hiddenprezident"></p>
+		<p id="hiddenpasport"></p><p id="hiddensocbezrab"></p><p id="hiddeninvalidnost"></p><p id="hiddenpensi"></p>
+		<p id="hiddenumnosj"></p><p id="hiddenschool"></p><p id="hiddenptu"></p><p id="hiddenvuz"></p><p id="hiddenzagran"></p>
+		<p id="hiddenpalatka"></p><p id="hiddenkomnat"></p><p id="hiddenbaykva"></p>
+		<p id="hiddenbayoffice"></p><p id="hiddenbaykott"></p><p id="hiddenbayvill"></p><p id="hiddensnickers">0</p>
+		<p id="hiddenvelik"></p><p id="hiddenvaz"></p><p id="hiddennicecar"></p><p id="hiddenhelocopt"></p><p id="hiddenjaht"></p>
+	</div>
+</div>
+<script type="text/javascript">
+	var hpdaydodeath=0
+	var hungerdaydodeath=0
+	var nastrdaydodeath=0
+	var daytelohran=0
+	var dayadvokat=0
+	var daypribank=0
+	var daypribsociety=0
+	var daysdkv=0
+	var daysdba=0
+	var dayzal=0
+	var daytren=0
+	var daykomn=0
+	var daydeath=Math.floor(Math.random() * 365)
+	var yeardodeath=Math.floor(Math.random() * 25)
+	var yeardeath=Number(100)-Number(yeardodeath)	
+	function time(){
+		var hp=hpg.innerHTML;
+		var nastr=nastroj.innerHTML;
+		var hunger=hung.innerHTML;
+		var day=kolvodney.innerHTML
+		var year=kolvolet.innerHTML
+		day=Number(day)+1
+		if (day>364) {
+			day=Number(day)-365
+			year=Number(year)+1
+		}
+		/*
+		if (hp==0) {
+			hpdaydodeath+=1
+			if (hp==7) {
+				alert("Скоро смерть от нехватки здоровья")
+			if (hp==10) {
+				alert("death")
+			}
+		}
+		else{
+			hpdaydodeath=0
+		}
+		if (hunger==0) {
+			hungerdaydodeath+=1
+			if (hunger==7) {
+				alert("Скоро смерть от нехватки здоровья")
+			if (hunger==10) {
+				alert("death")
+			}
+		}
+		else{
+			hungerdaydodeath=0
+		}
+		if (nastr==0) {
+			nastrdaydodeath+=1
+			if (nastr==7) {
+				alert("Скоро смерть от нехватки здоровья")
+			if (nastr==10) {
+				alert("death")
+			}
+		}
+		else{
+			nastrdaydodeath=0
+		}
+		*/
+		var hpminu=Math.floor(Math.random() * 6)
+		var nastrminu=Math.floor(Math.random() * 6)
+		if (hpminu<hp) {
+			hp=Number(hp)-Number(hpminu)
+		}
+		else{
+			hp=0
+		}
+		if (nastrminu<nastr) {
+			nastr=Number(nastr)-Number(nastrminu)
+		}
+		else{
+			nastr=0
+		}
+		if (hunger>100) {
+			hunger=100
+		}
+		var hpminu=Math.floor(Math.random() * 6)
+		var hungerminu=Math.floor(Math.random() * 6)
+		if (hpminu<hp) {
+			hp=Number(hp)-Number(hpminu)
+		}
+		else{
+			hp=0
+		}
+		if (hungerminu<hunger) {
+			hunger=Number(hunger)-Number(hungerminu)
+		}
+		else{
+			hunger=0
+		}
+		if (nastr>100) {
+			nastr=100
+		}
+		var hungerminu=Math.floor(Math.random() * 6)
+		var nastrminu=Math.floor(Math.random() * 6)
+		if (hungerminu<hunger) {
+			hunger=Number(hunger)-Number(hungerminu)
+		}
+		else{
+			hunger=0
+		}
+		if (nastrminu<nastr) {
+			nastr=Number(nastr)-Number(nastrminu)
+		}
+		else{
+			nastr=0
+		}
+		if (hp>100) {
+			hp=100
+		}		
+		kolvodney.innerHTML=day
+		kolvolet.innerHTML=year		
+		nastroj.innerHTML=nastr;
+		rub.innerHTML=rubl;
+		var yeardeath=100-Number(yeardodeath) 
+		if (yeardodeath==year) {
+			if (daydeath==day) {
+				alert("death")
+			}}
+		if(hiddenferma.innerHTML=="1"){
+			dol+=100
+		}
+		if (hiddenfamily.innerHTML=="1") {
+			hunger+=50		
+		}
+		if(hiddenbar.innerHTML=="1"){
+			dol-=100
+			nastr+=50
+		}
+		if(hiddennightclub.innerHTML=="1"){
+			dol+=500
+		}	
+		doll.innerHTML=dol;
+		if(hunger>100){
+			hunger=100
+		}
+		if(nastr>100){
+			nastr=100
+		}
+		hung.innerHTML=hunger;
+		nastroj.innerHTML=nastr;	
+		if (hiddenzal.innerHTML=="1") {
+			dayzal+=1
+			hp+=30
+			if (dayzal==31) {
+				rubl-=15000
+				dayzal=0
+			}
+		}
+		if (hiddentrainer.innerHTML=="1") {
+			daytren+=1
+			hp+=70
+			if (daytren==31) {
+				dol-=2000			
+				dayzal=0
+			}
+		}
+		if (hiddenkomnat.innerHTML=="1") {
+			daykomn+=1
+			if (daykomn==31) {
+				rubl-=15000			
+				daykomn=0
+			}
+		}
+		if (hiddenoldbomj.innerHTML=="1") {
+			but+=5
+			buttt.innerHTML=but;
+		}
+		if (sdathat.innerHTML=="1") {
+			daysdkv+=1
+			if (daysdkv==31) {
+				rubl+=30000			
+				daysdkv=0
+			}
+		}
+		if (sdatoffice.innerHTML=="1") {
+			daysdba+=1
+			if (daysdba==31) {
+				dol+=10000			
+				daysdba=0
+			}
+		}
+		if (newsociety.innerHTML=="1") {
+			daypribsociety+=1
+			if (daypribsociety==31) {
+				dol+=3000			
+				daypribsociety=0
+				doll.innerHTML=dol;
+			}
+		}
+		if (openbank.innerHTML=="1") {
+			daypribank+=1
+			if (daypribank==31) {
+				dol+=30000
+				daypribank=0
+				doll.innerHTML=dol;
+			}
+		}
+		if (hiddentelohran.innerHTML=="1") {
+			daytelohran+=1
+			if (daytelohran==31) {
+				dol-=25000
+				daytelohran=0
+				doll.innerHTML=dol;
+			}
+		}
+		if (hiddenadvokat.innerHTML=="1") {
+			dayadvokat+=1
+			if (dayadvokat==31) {
+				dol-=50000
+				dayadvokat=0
+				doll.innerHTML=dol;
+			}
+		}
+		rub.innerHTML=rubl;
+		
+		hpg.innerHTML=hp;
+		doll.innerHTML=dol;
+		hpgray.style.width=`${hp}%`
+		eatgray.style.height=`${hunger*9}px`
+		nastgray.style.height=`${nastr*9}px`
+		}
+	var rubl=0;
+	var dol=0;
+	var kursdol=40;
+	var kursbu=5;
+	var hp=50;
+	var nastr=50;
+	var hunger=50;
+	var but=0;
+	var raiting=0;
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	rait.innerHTML=raiting;
+	velkurs.innerHTML=kursdol;
+	kursbut.innerHTML=kursbu;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	buttt.innerHTML=but;
+propusk.onclick=function(){
+	time()
+}
+paybut.onclick=function(){
+		//изменение курса бутылок
+		var but=buttt.innerHTML;
+		var kursb=kursbut.innerHTML;
+		var rub2=rub.innerHTML;
+		var velkurbuts=velkurbut.value;
+		if(buttt.innerHTML>0){
+			rub2=Number(rub2)+(Number(kursb)*Number(velkurbuts));
+			but=Number(but)-Number(velkurbuts);
+			rub.innerHTML=rub2;
+			buttt.innerHTML=but;
+		}
+		else{
+			alert("Бутылок нет");
+		}
+}
+payallbut.onclick=function(){
+		//изменение курса бутылок
+		var but=buttt.innerHTML;
+		var kursb=kursbut.innerHTML
+		var rub2=rub.innerHTML
+		if(buttt.innerHTML>0){
+			rub2=Number(kursb)*Number(but)+Number(rub2)
+			but-=Number(but)}
+		else{
+			alert("Бутылок нет")
+		}
+		rub.innerHTML=rub2;
+		buttt.innerHTML=but;
+}
+paydol.onclick=function(){
+		var dolforfun=doll.innerHTML
+		var rub3=rub.innerHTML
+		var kursdolll=velkur.value
+		var kursdollll=velkurs.innerHTML	
+		if (kursdolll<=dolforfun) {
+			dolforfun=Number(dolforfun)-Number(kursdolll)
+			rub3=Number(kursdolll)*Number(kursdollll)+Number(rub3)
+			}
+		else{
+			alert("Больше нет валюты")
+		}
+		doll.innerHTML=dolforfun
+		rub.innerHTML=rub3
+}
+baydol.onclick=function(){
+		var dolforfun=doll.innerHTML
+		var rub3=rub.innerHTML
+		var kursdolll=velkur.value
+		var kursdollll=velkurs.innerHTML	
+		if(kursdollll*kursdolll<=rub3){
+			dolforfun=Number(kursdolll)+Number(dolforfun)
+			rub3=Number(rub3)-Number(kursdolll)*Number(kursdollll)
+		}
+		else{
+			alert("МАЛА РУБИЛЕЙ")
+		}
+		doll.innerHTML=dolforfun
+		rub.innerHTML=rub3
+}
+payalldol.onclick=function(){
+		var dolforfun=doll.innerHTML
+		var rub3=rub.innerHTML
+		var kursdolll=velkur.value
+		var kursdollll=velkurs.innerHTML
+		//var maxdolinrub=rub3-(rub3%kursdollll)
+		rub3=Number(dolforfun)*Number(kursdollll)+Number(rub3)
+		dolforfun=0		
+		doll.innerHTML=dolforfun
+		rub.innerHTML=rub3
+}
+bayalldol.onclick=function(){
+		var dolforfun=doll.innerHTML
+		var rub3=rub.innerHTML
+		var kursdolll=velkur.value
+		var kursdollll=velkurs.innerHTML
+		var maxdolinrub=rub3-(rub3%kursdollll)
+			dolforfun=Number(dolforfun)+Number(maxdolinrub)/Number(kursdollll) 
+			rub3-=Number(maxdolinrub)
+		doll.innerHTML=dolforfun
+		rub.innerHTML=rub3
+}
+rollgo.onclick=function(){
+		var rub4=rub.innerHTML
+		var rollsumm=rollsum.value
+		var zeroo=zero.checked
+		var redd=red.checked
+		var blackk=black.checked
+		var firnumm=firnum.checked
+		var twonumm=twonum.checked
+		var threenumm=threenum.checked
+		var rollnum=Math.floor(Math.random() * 36)
+			if (zeroo) {
+				if (rollnum==0){
+					rub4=Number(rub4)+Number(rollsumm)*36
+					rub.innerHTML=rub4
+				}
+				else{
+					rub4=Number(rub4)-Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+			}
+			if(redd){
+				if(rollnum%2==0){
+					rub4=Number(rub4)+Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+				else{
+					rub4=Number(rub4)-Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+			}
+			if(blackk){
+				if(rollnum%2!=0){
+					rub4=Number(rub4)+Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+				else{
+					rub4=Number(rub4)-Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+			}
+			if(firnumm){
+				if(rollnum>0 && rollnum<12){
+					rub4=Number(rub4)+Number(rollsumm)*2
+					rub.innerHTML=rub4
+				}
+				else{
+					rub4=Number(rub4)-Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+			}
+			if(twonumm){
+				if(rollnum>13 && rollnum<24){
+					rub4=Number(rub4)+Number(rollsumm)*2
+					rub.innerHTML=rub4
+				}
+				else{
+					rub4=Number(rub4)-Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+			}
+			if(threenumm){
+				if(rollnum>25 && rollnum<36){
+					rub4=Number(rub4)+Number(rollsumm)*2
+					rub.innerHTML=rub4
+				}
+				else{
+					rub4=Number(rub4)-Number(rollsumm)
+					rub.innerHTML=rub4
+				}
+			}
+		}
+
+eatzero.onclick=function(){	
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	hunger=Number(hunger)+Number(Math.floor(Math.random() * 12))
+	var hpminu=Math.floor(Math.random() * 6)
+	var nastrminu=Math.floor(Math.random() * 6)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hunger>100) {
+		hunger=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	time()
+}
+eat100.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	hunger=Number(hunger)+Number(Math.floor(Math.random() * 24))
+	rubl-=100
+	var hpminu=Math.floor(Math.random() * 6)
+	var nastrminu=Math.floor(Math.random() * 6)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hunger>100) {
+		hunger=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+eat500.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	hunger=Number(hunger)+Number(42)
+	rubl-=500
+	var hpminu=Math.floor(Math.random() * 2)
+	var nastrminu=Math.floor(Math.random() * 2)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hunger>100) {
+		hunger=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+eat3000.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	hunger=Number(hunger)+Number(90)
+	rubl-=3000
+	var hpminu=Math.floor(Math.random() * 2)
+	var nastrminu=Math.floor(Math.random() * 2)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hunger>100) {
+		hunger=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+eatfamily.onclick=function(){
+	hiddenfamily.innerHTML="1"
+	document.getElementById('eatfamily').setAttribute("disabled", "true");
+}
+nast50.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	nastr=Number(nastr)+Number(Math.floor(Math.random() * 12))
+	rubl-=50
+	var hpminu=Math.floor(Math.random() * 6)
+	var hungerminu=Math.floor(Math.random() * 6)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastr>100) {
+		nastr=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+nast200.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	nastr=Number(nastr)+Number(Math.floor(Math.random() * 24))
+	rubl-=200
+	var hpminu=Math.floor(Math.random() * 6)
+	var hungerminu=Math.floor(Math.random() * 6)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastr>100) {
+		nastr=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+nast500.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	nastr=Number(nastr)+Number(42)
+	rubl-=500
+	var hpminu=Math.floor(Math.random() * 15)
+	var hungerminu=Math.floor(Math.random() * 15)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastr>100) {
+		nastr=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+nast1500.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	nastr=Number(nastr)+Number(90)
+	rubl-=1500
+	var hpminu=Math.floor(Math.random() * 15)
+	var hungerminu=Math.floor(Math.random() * 15)
+	if (hpminu<hp) {
+		hp=Number(hp)-Number(hpminu)
+	}
+	else{
+		hp=0
+	}
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastr>100) {
+		nastr=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+nastesterday.onclick=function(){
+	hiddenbar.innerHTML="1"
+	document.getElementById('nastesterday').setAttribute("disabled", "true");
+}
+her0.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	hp=Number(hp)+Number(Math.floor(Math.random() * 24))
+	var hungerminu=Math.floor(Math.random() * 6)
+	var nastrminu=Math.floor(Math.random() * 6)
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hp>100) {
+		hp=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+her100.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rubl-=100
+	hp=Number(hp)+Number(Math.floor(Math.random() * 12))
+	var hungerminu=Math.floor(Math.random() * 6)
+	var nastrminu=Math.floor(Math.random() * 6)
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hp>100) {
+		hp=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+her500.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rubl-=500
+	hp=Number(hp)+Number(42)
+	var hungerminu=Math.floor(Math.random() * 2)
+	var nastrminu=Math.floor(Math.random() * 2)
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hp>100) {
+		hp=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+her3000.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rubl-=3000
+	hp=Number(hp)+Number(55)
+	var hungerminu=Math.floor(Math.random() * 2)
+	var nastrminu=Math.floor(Math.random() * 2)
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hp>100) {
+		hp=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+her50k.onclick=function(){
+	time()
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rubl-=50000
+	hp=Number(hp)+Number(90)
+	var hungerminu=Math.floor(Math.random() * 2)
+	var nastrminu=Math.floor(Math.random() * 2)
+	if (hungerminu<hunger) {
+		hunger=Number(hunger)-Number(hungerminu)
+	}
+	else{
+		hunger=0
+	}
+	if (nastrminu<nastr) {
+		nastr=Number(nastr)-Number(nastrminu)
+	}
+	else{
+		nastr=0
+	}
+	if (hp>100) {
+		hp=100
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+sport.onclick=function(){
+	rub.innerHTML=rubl;
+	doll.innerHTML=dol;
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	if (hiddensnickers.innerHTML=="1") {
+		time()
+		hp=Number(hp)+Number(Math.floor(Math.random() * 42))
+		var hungerminu=Math.floor(Math.random() * 6)
+		var nastrminu=Math.floor(Math.random() * 6)
+		if (hungerminu<hunger) {
+			hunger=Number(hunger)-Number(hungerminu)
+		}
+		else{
+			hunger=0
+		}
+		if (nastrminu<nastr) {
+			nastr=Number(nastr)-Number(nastrminu)
+		}
+		else{
+			nastr=0
+		}
+		if (hp>100) {
+			hp=100		
+		}
+	}
+	else{
+		alert("Кроссовок нет")
+	}
+	hpg.innerHTML=hp;
+	nastroj.innerHTML=nastr;
+	hung.innerHTML=hunger;
+	rub.innerHTML=rubl;
+}
+sportzal.onclick=function(){
+	hiddenzal.innerHTML="1"
+	document.getElementById('sportzal').setAttribute("disabled", "true");
+	rubl-=15000
+	rub.innerHTML=rubl;
+}
+sportrener.onclick=function(){
+	hiddentrainer.innerHTML="1"
+	document.getElementById('sportrener').setAttribute("disabled", "true");
+	dol-=2000
+	doll.innerHTML=dol;
+}
+immortal.onclick=function(){
+	hiddenbessmert.innerHTML="1"
+	document.getElementById('immortal').setAttribute("disabled", "true");
+	dol-=1000000000
+	doll.innerHTML=dol;
+	daydeath="НИКОГДА"
+	yeardeath="НИКОГДА"
+}
+cartime.onclick=function(){
+	hiddenmashvr.innerHTML="1"
+	document.getElementById('cartime').setAttribute("disabled", "true");
+	dol-=100000000
+	doll.innerHTML=dol;
+}
+olddeath.onclick=function(){	
+	if (hiddenyearsm.innerHTML=="net") {	
+		if (hiddendaysm.innerHTML=='net') {	
+			dol=Number(dol)-1000
+			doll.innerHTML=dol;
+			alert("ДЕНЬ: " + daydeath + " ГОД: " + yeardeath)
+			hiddenyearsm.innerHTML=yeardeath
+			hiddendaysm.innerHTML=daydeath
+			doll.innerHTML=dol;
+			}
+		}
+	else{
+		alert("ДЕНЬ: " + daydeath + " ГОД: " + yeardeath)
+	}
+}
+transp1.onclick=function(){
+	rubl-=2000
+	rub.innerHTML=rubl;
+	hiddensnickers.innerHTML="1"
+	document.getElementById('transp1').setAttribute("disabled", "true");
+	auto.innerHTML="Кроссовки"
+}
+transp2.onclick=function(){
+	rubl-=10000
+	rub.innerHTML=rubl;
+	hiddenvelik.innerHTML="1"
+	document.getElementById('transp2').setAttribute("disabled", "true");
+	auto.innerHTML="Велик"
+}
+transp3.onclick=function(){
+	dol-=2000
+	doll.innerHTML=dol;
+	hiddenvaz.innerHTML="1"
+	document.getElementById('transp3').setAttribute("disabled", "true");
+	document.getElementById('bomz7').removeAttribute("disabled")
+	auto.innerHTML="Ваз"
+}
+transp4.onclick=function(){
+	dol-=50000
+	doll.innerHTML=dol;
+	hiddennicecar.innerHTML="1"
+	document.getElementById('transp4').setAttribute("disabled", "true");
+	document.getElementById('bomz8').removeAttribute("disabled")
+	auto.innerHTML="Bugatti"
+}
+transp5.onclick=function(){
+	dol-=600000
+	doll.innerHTML=dol;	
+	hiddenhelocopt.innerHTML="1"
+	document.getElementById('transp5').setAttribute("disabled", "true");
+	document.getElementById('bomz9').removeAttribute("disabled")
+	auto.innerHTML="Вертолет"
+}
+transp6.onclick=function(){
+	dol-=2000000
+	doll.innerHTML=dol;
+	hiddenjaht.innerHTML="1"
+	document.getElementById('transp6').setAttribute("disabled", "true");
+	auto.innerHTML="Яхта"
+}
+vlad1.onclick=function(){
+	dol-=100000
+	doll.innerHTML=dol;
+	hiddenferma.innerHTML="1"
+	document.getElementById('vlad1').setAttribute("disabled", "true");
+}
+vlad2.onclick=function(){
+	dol-=500000
+	doll.innerHTML=dol;
+	hiddennightclub.innerHTML="1"
+	document.getElementById('vlad2').setAttribute("disabled", "true");
+}
+learn1.onclick=function(){
+	document.getElementById('learn1').setAttribute("disabled", "true");
+	hiddenumnosj.innerHTML="1"
+	rubl-=150
+	rub.innerHTML=rubl;
+	document.getElementById('learn2').removeAttribute("disabled")
+	document.getElementById('rollgo').removeAttribute("disabled")
+}
+learn2.onclick=function(){
+	document.getElementById('learn2').setAttribute("disabled", "true");
+	hiddenschool.innerHTML="1"
+	rubl-=5000
+	rub.innerHTML=rubl;
+	document.getElementById('learn3').removeAttribute("disabled")
+	document.getElementById('work1').removeAttribute("disabled")
+	document.getElementById('work2').removeAttribute("disabled")
+}
+learn3.onclick=function(){
+	document.getElementById('learn3').setAttribute("disabled", "true");
+	hiddenptu.innerHTML="1"
+	rubl-=25000
+	rub.innerHTML=rubl;
+	document.getElementById('learn4').removeAttribute("disabled")
+	document.getElementById('work3').removeAttribute("disabled")
+	document.getElementById('work4').removeAttribute("disabled")
+}
+learn4.onclick=function(){
+	document.getElementById('learn4').setAttribute("disabled", "true");
+	hiddenvuz.innerHTML="1"
+	rubl-=200000
+	rub.innerHTML=rubl;
+	document.getElementById('learn5').removeAttribute("disabled")
+	document.getElementById('work5').removeAttribute("disabled")
+}
+learn5.onclick=function(){
+	document.getElementById('learn5').setAttribute("disabled", "true");
+	hiddenvuz.innerHTML="1"
+	rubl-=1000000
+	rub.innerHTML=rubl;
+	document.getElementById('work6').removeAttribute("disabled")
+}
+raiting1.onclick=function(){
+	rubl-=1000
+	raiting+=100
+	rub.innerHTML=rubl;
+	rait.innerHTML=raiting;
+}
+raiting2.onclick=function(){
+	rubl-=50000
+	raiting+=5000
+	rub.innerHTML=rubl;
+	rait.innerHTML=raiting;
+}
+raiting3.onclick=function(){
+	rubl-=150000
+	raiting+=15000
+	rub.innerHTML=rubl;
+	rait.innerHTML=raiting;
+}
+raiting4.onclick=function(){
+	dol-=10000
+	raiting+=30000
+	doll.innerHTML=dol;
+	rait.innerHTML=raiting;
+}
+raiting5.onclick=function(){
+	dol-=5000000
+	raiting+=15000000
+	doll.innerHTML=dol;
+	rait.innerHTML=raiting;
+}
+home1.onclick=function(){
+	rubl-=500
+	document.getElementById('home1').setAttribute("disabled", "true");
+	hiddenpalatka.innerHTML="1"
+	rub.innerHTML=rubl;
+	home.innerHTML="Палатка"
+}
+home2.onclick=function(){
+	hiddenkomnat.innerHTML="1"
+	rubl-=15000
+	rub.innerHTML=rubl;
+	home.innerHTML="Комната"
+	document.getElementById('home2').setAttribute("disabled", "true");
+} 
+home4.onclick=function(){
+	document.getElementById('home2').removeAttribute("disabled")
+	document.getElementById('buis2').removeAttribute("disabled")
+	dol-=300000
+	document.getElementById('home4').setAttribute("disabled", "true");
+	hiddenkomnat.innerHTML=""
+	hiddenbaykva.innerHTML="1"
+	doll.innerHTML=dol;
+	home.innerHTML="Квартира"
+}
+home5.onclick=function(){
+	dol-=1000000
+	document.getElementById('buis3').removeAttribute("disabled")
+	document.getElementById('home5').setAttribute("disabled", "true");
+	hiddenbayoffice.innerHTML="1"
+	doll.innerHTML=dol;
+	home.innerHTML="Офис"
+}
+home6.onclick=function(){
+	dol-=3000000
+	document.getElementById('home6').setAttribute("disabled", "true");
+	hiddenbaykott.innerHTML="1"
+	doll.innerHTML=dol;
+	home.innerHTML="Коттедж"
+}
+home7.onclick=function(){
+	dol-=5000000
+	document.getElementById('home7').setAttribute("disabled", "true");
+	hiddenbayvill.innerHTML="1"
+	doll.innerHTML=dol;
+	home.innerHTML="Вилла"
+}
+bomz1.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 14)
+	but+=Math.floor(Math.random() * 3)
+	buttt.innerHTML=but;
+}
+bomz2.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 24)
+	but+=Math.floor(Math.random() * 5)
+	buttt.innerHTML=but;
+}
+bomz3.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 38)
+	but+=Math.floor(Math.random() * 8)
+	buttt.innerHTML=but;
+}
+bomz4.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 55)
+	but+=Math.floor(Math.random() * 12)
+	buttt.innerHTML=but;
+}
+bomz5.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 50)
+	but+=Math.floor(Math.random() * 6)
+	buttt.innerHTML=but;
+}
+bomz6.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 115)
+	but+=Math.floor(Math.random() * 12)
+}
+bomz6.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 115)
+	but+=Math.floor(Math.random() * 12)
+	buttt.innerHTML=but;
+}
+bomz7.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 600)
+}
+bomz8.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 6000)
+}
+bomz9.onclick=function(){
+	time()
+	rubl+=Math.floor(Math.random() * 600000)
+}
+buis1.onclick=function(){
+	rub.innerHTML-=3000
+	hiddenoldbomj.innerHTML="1"	
+	document.getElementById('buis1').setAttribute("disabled", "true");
+	buttt.innerHTML=but;
+}
+buis2.onclick=function(){
+	rubl+=30000
+	sdathat.innerHTML="1"	
+	document.getElementById('buis2').setAttribute("disabled", "true");
+}
+buis3.onclick=function(){
+	dol+=10000
+	sdatoffice.innerHTML="1"
+	document.getElementById('buis3').setAttribute("disabled", "true");	
+}
+buis4.onclick=function(){
+	dol-=1000000
+	doll.innerHTML=dol;
+	newsociety.innerHTML="1"	
+	document.getElementById('buis4').setAttribute("disabled", "true");
+}
+buis5.onclick=function(){
+	dol-=10000000
+	doll.innerHTML=dol;
+	openbank.innerHTML="1"	
+	document.getElementById('buis5').setAttribute("disabled", "true");
+}
+ohrana1.onclick=function(){
+	hiddenamulet.innerHTML="1"
+	rubl-=15000
+	document.getElementById('ohrana1').setAttribute("disabled", "true");
+}
+ohrana2.onclick=function(){
+	hiddentelohran.innerHTML="1"
+	dol-=25000
+	doll.innerHTML=dol;
+	document.getElementById('ohrana2').setAttribute("disabled", "true");
+}
+ohrana3.onclick=function(){
+	hiddenadvokat.innerHTML="1"
+	dol-=50000
+	doll.innerHTML=dol;
+	document.getElementById('ohrana3').setAttribute("disabled", "true");
+}
+polit1.onclick=function(){
+	dol-=500000
+	doll.innerHTML=dol;
+	hiddendeputat.innerHTML="1"
+	document.getElementById('work9').removeAttribute("disabled")
+	document.getElementById('polit1').setAttribute("disabled", "true");
+}
+polit2.onclick=function(){
+	dol-=500000
+	doll.innerHTML=dol;
+	hiddenminoboron.innerHTML="1"
+	document.getElementById('work10').removeAttribute("disabled")
+	document.getElementById('polit2').setAttribute("disabled", "true");
+}
+polit3.onclick=function(){
+	dol-=500000
+	doll.innerHTML=dol;
+	hiddenminfin.innerHTML="1"
+	document.getElementById('work11').removeAttribute("disabled")
+	document.getElementById('polit3').setAttribute("disabled", "true");
+}
+polit4.onclick=function(){
+	dol-=1000000
+	doll.innerHTML=dol;
+	var vibori=Math.floor(Math.random() *6)
+	if (vibori==1) {
+		hiddenprezident.innerHTML="1"
+		document.getElementById('work12').removeAttribute("disabled")
+		document.getElementById('polit5').setAttribute("disabled", "true");
+	}
+}
+polit5.onclick=function(){
+	dol-=1000000000
+	doll.innerHTML=dol;
+	hiddenprezident.innerHTML="1"
+	document.getElementById('work12').removeAttribute("disabled")
+	document.getElementById('polit5').setAttribute("disabled", "true");
+}
+work1.onclick=function(){
+	time()
+	rubl+=300
+	rub.innerHTML=rubl;
+}
+work2.onclick=function(){
+	time()
+	rubl+=400
+	rub.innerHTML=rubl;
+}
+work3.onclick=function(){
+	time()
+	rubl+=650
+	rub.innerHTML=rubl;
+}
+work4.onclick=function(){
+	time()
+	rubl+=800
+	rub.innerHTML=rubl;
+}
+work5.onclick=function(){
+	time()
+	rubl+=2500
+	rub.innerHTML=rubl;
+}
+work6.onclick=function(){
+	time()
+	rubl+=25000
+	rub.innerHTML=rubl;
+}
+work7.onclick=function(){
+	time()
+	rubl+=60000
+	rub.innerHTML=rubl;
+}
+work8.onclick=function(){
+	time()
+	rubl+=80000
+	rub.innerHTML=rubl;
+}
+work9.onclick=function(){
+	time()
+	rubl+=100000
+	rub.innerHTML=rubl;
+}
+work10.onclick=function(){
+	time()
+	rubl+=150000
+	rub.innerHTML=rubl;
+}
+</script>
+</body>
+</html>

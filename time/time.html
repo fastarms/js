@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test2</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			background: url('https://images.wallpaperscraft.ru/image/lava_vulkan_obryv_136106_1920x1080.jpg');
+		}
+		div{			
+			width: 80%;
+			margin-left: 10%;
+		}
+		p{	
+			font-family:Pompadur;			
+			font-size: 250px;				
+			text-align: center;	
+			color:yellow;		
+		}
+		#ms{
+			position: absolute;
+			font-size: 100px;
+			left: 1500px;
+			top: 190px;
+			color:lightyellow;
+		}
+		@font-face {
+    		font-family: Pompadur;
+    		src: url(jua.ttf);
+   		}
+	</style>
+</head>
+<body>
+	<div><p id="time">time</p><p id="ms">ms</p></div>
+<script>
+function correctTime(time){
+	time=String(time)	
+	if (time.length==2) {
+		return time
+	}
+	else{			
+		return String(0)+String(time)
+	}
+}	
+function correctmsTime(time){
+	time=String(time)	
+
+	if (time.length==3) {		
+		return time		
+	}
+	else if(time.length==2){					
+		return String(0)+String(time)		
+	}
+	else{		
+		return String(0)+String(0)+String(time)		
+	}
+}
+function generTime() {
+	let tim=new Date()
+	let hour=tim.getHours()
+	hour=correctTime(hour)
+	let minute=tim.getMinutes()
+	minute=correctTime(minute)
+	let second=tim.getSeconds()
+	second=correctTime(second)
+	let mss=tim.getMilliseconds()
+	mss=correctmsTime(mss)
+	time.innerHTML=`${hour}:${minute}:${second}`
+	ms.innerHTML=`${mss}`
+}
+setInterval(() => generTime(), 1);
+</script>
+</body>
+</html>	

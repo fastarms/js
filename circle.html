@@ -29,7 +29,7 @@ function createBall(x, y1, y2){
 	asd.style.width=`${x}px`
 	asd.style.marginLeft=`${y1/2}px`
 	asd.style.marginTop=`${y2/2}px`
-	if (x==60) {alert('defeat')}
+	if (x==60) {alert('defeat'); t=40}
 }
 
 
@@ -39,7 +39,7 @@ setInterval(() => createBall(x+=1, y1-=1, y2-=1), 20);
 asd.onclick=function(){
 	asd.style.display="none"
 	x=10
-	if (t<0) {alert('win')}
+	if (t<0) {alert('win'); t=40}
 	y1= Math.random() * (1580 - 20) + 20;
 	y2= Math.random() * (880 - 20) + 20;
 	createBall(x+=1, y1-=1, y2-=1)

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+    	body{background:lightblue}
+    	* { padding: 0; margin: 0; }
+    	canvas { background: lightyellow; display: block; margin: 0 auto; }
+    	#a1{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 660px; top:50px; font-size: 50px;color:black;}
+    	#a2{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 760px; top:50px; font-size: 50px;color:black;}
+    	#a3{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 860px; top:50px; font-size: 50px;color:black;}
+    	#a4{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 960px; top:50px; font-size: 50px;color:black;}    	
+    	#a5{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1060px; top:50px; font-size: 50px;color:black;}
+    	#a6{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1160px; top:50px; font-size: 50px;color:black;}
+    	#b1{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 660px; top:150px; font-size: 50px;color:black;}
+    	#b2{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 760px; top:150px; font-size: 50px;color:black;}
+    	#b3{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 860px; top:150px; font-size: 50px;color:black;}
+    	#b4{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 960px; top:150px; font-size: 50px;color:black;}    	
+    	#b5{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1060px; top:150px; font-size: 50px;color:black;}
+    	#b6{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1160px; top:150px; font-size: 50px;color:black;}
+
+    	#c1{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 660px; top:250px; font-size: 50px;color:black;}
+    	#c2{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 760px; top:250px; font-size: 50px;color:black;}
+    	#c3{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 860px; top:250px; font-size: 50px;color:black;}
+    	#c4{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 960px; top:250px; font-size: 50px;color:black;}    	
+    	#c5{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1060px; top:250px; font-size: 50px;color:black;}
+    	#c6{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1160px; top:250px; font-size: 50px;color:black;}
+    	#d1{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 660px; top:350px; font-size: 50px;color:black;}
+    	#d2{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 760px; top:350px; font-size: 50px;color:black;}
+    	#d3{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 860px; top:350px; font-size: 50px;color:black;}
+    	#d4{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 960px; top:350px; font-size: 50px;color:black;}    	
+    	#d5{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1060px; top:350px; font-size: 50px;color:black;}
+    	#d6{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1160px; top:350px; font-size: 50px;color:black;}
+    	#e1{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 660px; top:450px; font-size: 50px;color:black;}
+    	#e2{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 760px; top:450px; font-size: 50px;color:black;}
+    	#e3{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 860px; top:450px; font-size: 50px;color:black;}
+    	#e4{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 960px; top:450px; font-size: 50px;color:black;}    	
+    	#e5{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1060px; top:450px; font-size: 50px;color:black;}
+    	#e6{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1160px; top:450px; font-size: 50px;color:black;}
+    	#f1{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 660px; top:550px; font-size: 50px;color:black;}
+    	#f2{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 760px; top:550px; font-size: 50px;color:black;}
+    	#f3{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 860px; top:550px; font-size: 50px;color:black;}
+    	#f4{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 960px; top:550px; font-size: 50px;color:black;}    	
+    	#f5{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1060px; top:550px; font-size: 50px;color:black;}
+    	#f6{width: 100px; height: 100px; border: 1px solid black; position: absolute; left: 1160px; top:550px; font-size: 50px;color:black;}
+
+    	#a11{width: 100px; height: 100px; left: 660px; top:50px; background:gray;}
+    	#a21{width: 100px; height: 100px; left: 760px; top:50px; background:gray;}
+    	#a31{width: 100px; height: 100px; left: 860px; top:50px; background:gray;}
+    	#a41{width: 100px; height: 100px; left: 960px; top:50px; background:gray;}    	
+    	#a51{width: 100px; height: 100px; left: 1060px; top:50px; background:gray;}
+    	#a61{width: 100px; height: 100px; left: 1160px; top:50px; background:gray;}
+    	#b11{width: 100px; height: 100px; left: 660px; top:150px; background:gray;}
+    	#b21{width: 100px; height: 100px; left: 760px; top:150px; background:gray;}
+    	#b31{width: 100px; height: 100px; left: 860px; top:150px; background:gray;}
+    	#b41{width: 100px; height: 100px; left: 960px; top:150px; background:gray;}    	
+    	#b51{width: 100px; height: 100px; left: 1060px; top:150px; background:gray;}
+
+    	#b61{width: 100px; height: 100px; left: 1160px; top:150px; background:gray;}
+    	#c11{width: 100px; height: 100px; left: 660px; top:240px; background:gray;}
+    	#c21{width: 100px; height: 100px; left: 760px; top:250px; background:gray;}
+    	#c31{width: 100px; height: 100px; left: 860px; top:250px; background:gray;}
+    	#c41{width: 100px; height: 100px; left: 960px; top:250px; background:gray;}    	
+    	#c51{width: 100px; height: 100px; left: 1060px; top:250px; background:gray;}
+    	#c61{width: 100px; height: 100px; left: 1160px; top:250px; background:gray;}
+    	#d11{width: 100px; height: 100px; left: 660px; top:350px; background:gray;}
+    	#d21{width: 100px; height: 100px; left: 760px; top:350px; background:gray;}
+    	#d31{width: 100px; height: 100px; left: 860px; top:350px; background:gray;}
+    	#d41{width: 100px; height: 100px; left: 960px; top:350px; background:gray;}    	
+    	#d51{width: 100px; height: 100px; left: 1060px; top:350px; background:gray;}
+    	#d61{width: 100px; height: 100px; left: 1160px; top:350px; background:gray;}
+    	#e11{width: 100px; height: 100px; left: 660px; top:450px; background:gray;}
+    	#e21{width: 100px; height: 100px; left: 760px; top:450px; background:gray;}
+    	#e31{width: 100px; height: 100px; left: 860px; top:450px; background:gray;}
+    	#e41{width: 100px; height: 100px; left: 960px; top:450px; background:gray;}    	
+    	#e51{width: 100px; height: 100px; left: 1060px; top:450px; background:gray;}
+    	#e61{width: 100px; height: 100px; left: 1160px; top:450px; background:gray;}
+    	#f11{width: 100px; height: 100px; left: 660px; top:550px; background:gray;}
+    	#f21{width: 100px; height: 100px; left: 760px; top:550px; background:gray;}
+    	#f31{width: 100px; height: 100px; left: 860px; top:550px; background:gray;}
+    	#f41{width: 100px; height: 100px; left: 960px; top:550px; background:gray;}    	
+    	#f51{width: 100px; height: 100px; left: 1060px; top:550px; background:gray;}
+    	#f61{width: 100px; height: 100px; left: 1160px; top:550px; background:gray;}
+    	#img1{width: 60px; position: absolute;left: 680px;top:60px; display: none; margin-top: 10px}
+    	#img2{width: 60px; position: absolute;left: 680px;top:60px; display: none; margin-top: 10px}
+    	#img3{width: 60px; position: absolute;left: 680px;top:60px; display: none; margin-top: 10px}
+    	#img4{width: 60px; position: absolute;left: 680px;top:60px; display: none; margin-top: 10px}
+    	#img5{width: 60px; position: absolute;left: 680px;top:60px; display: none; margin-top: 10px}
+    	#opal{width: 300px; height: 100px; position: absolute;top: 670px; left: 925px;}
+    </style>
+</head>
+<body>
+<img src="http://pngimg.com/uploads/mines/mines_PNG21.png" id="img1">
+<img src="http://pngimg.com/uploads/mines/mines_PNG21.png" id="img2">
+<img src="http://pngimg.com/uploads/mines/mines_PNG21.png" id="img3">
+<img src="http://pngimg.com/uploads/mines/mines_PNG21.png" id="img4">
+<img src="http://pngimg.com/uploads/mines/mines_PNG21.png" id="img5">
+<canvas id="myCanvas" width="700" height="700"></canvas>
+<div id="a1"><input type="button" id="a11"></div><div id="a2"><input type="button" id="a21"></div><div id="a3"><input type="button" id="a31">
+</div><div id="a4"><input type="button" id="a41"></div><div id="a5"><input type="button" id="a51"></div><div id="a6">
+<input type="button" id="a61"></div>
+<div id="f1"><input type="button" id="f11"></div><div id="f2"><input type="button" id="f21"></div><div id="f3"><input type="button" id="f31">
+</div><div id="f4"><input type="button" id="f41"></div><div id="f5"><input type="button" id="f51"></div><div id="f6">
+<input type="button" id="f61"></div>
+<div id="b1"><input type="button" id="b11"></div><div id="b2"><input type="button" id="b21"></div><div id="b3"><input type="button" id="b31">
+</div><div id="b4"><input type="button" id="b41"></div><div id="b5"><input type="button" id="b51"></div><div id="b6">
+<input type="button" id="b61"></div>
+<div id="c1"><input type="button" id="c11"></div><div id="c2"><input type="button" id="c21"></div><div id="c3"><input type="button" id="c31">
+</div><div id="c4"><input type="button" id="c41"></div><div id="c5"><input type="button" id="c51"></div><div id="c6">
+<input type="button" id="c61"></div>
+<div id="d1"><input type="button" id="d11"></div><div id="d2"><input type="button" id="d21"></div><div id="d3"><input type="button" id="d31">
+</div><div id="d4"><input type="button" id="d41"></div><div id="d5"><input type="button" id="d51"></div><div id="d6">
+<input type="button" id="d61"></div>
+<div id="e1"><input type="button" id="e11"></div><div id="e2"><input type="button" id="e21"></div><div id="e3"><input type="button" id="e31">
+</div><div id="e4"><input type="button" id="e41"></div><div id="e5"><input type="button" id="e51"></div><div id="e6">
+<input type="button" id="e61"></div>
+<div id="opal"><input type="button" value="открыть все"></div>
+<script>
+	let canvas1=document.getElementById("myCanvas");
+	let ctx=canvas1.getContext("2d")
+	perem=[
+		A1=0, A2=0, A3=0, A4=0, A5=0, A6=0,
+		B1=0, B2=0, B3=0, B4=0, B5=0, B6=0,
+		C1=0, C2=0, C3=0, C4=0, C5=0, C6=0,
+		D1=0, D2=0, D3=0, D4=0, D5=0, D6=0,
+		E1=0, E2=0, E3=0, E4=0, E5=0, E6=0,
+		F1=0, F2=0, F3=0, F4=0, F5=0, F6=0,
+		]
+		let varle=
+		 [a1, a2, a3, a4, a5, a6,
+		  b1, b2, b3, b4, b5, b6,
+		  c1, c2, c3, c4, c5, c6,
+		  d1, d2, d3, d4, d5, d6,
+		  e1, e2, e3, e4, e5, e6,
+		  f1, f2, f3, f4, f5, f6]
+		min=[]	
+
+	function zif(num, num2){
+		if (num2=="1") {
+		if (num=='1') {		
+			img1.style.top=`${50}px`
+			img1.style.display="block"		
+		}
+		if (num=='2') {	
+			img1.style.top=`${150}px`
+			img1.style.display="block"			
+		}
+		if (num=='3') {	
+			img1.style.top=`${250}px`
+			img1.style.display="block"			
+		}
+		if (num=='4') {		
+			img1.style.top=`${350}px`
+			img1.style.display="block"			
+		}
+		if (num=='5') {		
+			img1.style.top=`${450}px`
+			img1.style.display="block"			
+		}
+		if (num=='6') {			
+			img1.style.top=`${550}px`
+			img1.style.display="block"			
+		}}
+
+		if (num2=="2") {
+		if (num=='1') {		
+			img2.style.top=`${50}px`
+			img2.style.display="block"		
+		}
+		if (num=='2') {	
+			img2.style.top=`${150}px`
+			img2.style.display="block"			
+		}
+		if (num=='3') {	
+			img2.style.top=`${250}px`
+			img2.style.display="block"			
+		}
+		if (num=='4') {		
+			img2.style.top=`${350}px`
+			img2.style.display="block"			
+		}
+		if (num=='5') {		
+			img2.style.top=`${450}px`
+			img2.style.display="block"			
+		}
+		if (num=='6') {			
+			img2.style.top=`${550}px`
+			img2.style.display="block"			
+		}}
+
+		if (num2=="3") {
+		if (num=='1') {		
+			img3.style.top=`${50}px`
+			img3.style.display="block"		
+		}
+		if (num=='2') {	
+			img3.style.top=`${150}px`
+			img3.style.display="block"			
+		}
+		if (num=='3') {	
+			img3.style.top=`${250}px`
+			img3.style.display="block"			
+		}
+		if (num=='4') {		
+			img3.style.top=`${350}px`
+			img3.style.display="block"			
+		}
+		if (num=='5') {		
+			img3.style.top=`${450}px`
+			img3.style.display="block"			
+		}
+		if (num=='6') {			
+			img3.style.top=`${550}px`
+			img3.style.display="block"			
+		}}
+
+		if (num2=="4") {
+		if (num=='1') {		
+			img4.style.top=`${50}px`
+			img4.style.display="block"		
+		}
+		if (num=='2') {	
+			img4.style.top=`${150}px`
+			img4.style.display="block"			
+		}
+		if (num=='3') {	
+			img4.style.top=`${250}px`
+			img4.style.display="block"			
+		}
+		if (num=='4') {		
+			img4.style.top=`${350}px`
+			img4.style.display="block"			
+		}
+		if (num=='5') {		
+			img4.style.top=`${450}px`
+			img4.style.display="block"			
+		}
+		if (num=='6') {			
+			img4.style.top=`${550}px`
+			img4.style.display="block"			
+		}}
+
+		if (num2=="5") {
+		if (num=='1') {		
+			img5.style.top=`${50}px`
+			img5.style.display="block"		
+		}
+		if (num=='2') {	
+			img5.style.top=`${150}px`
+			img5.style.display="block"			
+		}
+		if (num=='3') {	
+			img5.style.top=`${250}px`
+			img5.style.display="block"			
+		}
+		if (num=='4') {		
+			img5.style.top=`${350}px`
+			img5.style.display="block"			
+		}
+		if (num=='5') {		
+			img5.style.top=`${450}px`
+			img5.style.display="block"			
+		}
+		if (num=='6') {			
+			img5.style.top=`${550}px`
+			img5.style.display="block"			
+		}}
+		if (num2=="6") {
+		if (num=='1') {		
+			img6.style.top=`${50}px`
+			img6.style.display="block"		
+		}
+		if (num=='2') {	
+			img6.style.top=`${150}px`
+			img6.style.display="block"			
+		}
+		if (num=='3') {	
+			img6.style.top=`${250}px`
+			img6.style.display="block"			
+		}
+		if (num=='4') {		
+			img6.style.top=`${350}px`
+			img6.style.display="block"			
+		}
+		if (num=='5') {		
+			img6.style.top=`${450}px`
+			img6.style.display="block"			
+		}
+		if (num=='6') {			
+			img6.style.top=`${550}px`
+			img6.style.display="block"			
+		}}
+	}
+	function retNumMin(min, varle){
+		zerr=[]
+		zzz=0
+		for(let item of varle){
+			for(let item2 of min){
+			if (item == item2) {
+				zerr.push(zzz)
+			}
+			
+		}
+			zzz++
+		}
+		return zerr
+	}
+	function checkOkrug(perem, min, ska, varle){	
+		for(let item of ska){
+			if (varle[item+1]) {
+				perem[item+1]+=1
+			}			
+			if (varle[item-1]) {
+				perem[item-1]+=1
+			}
+			if (varle[item+5]) {
+				perem[item+5]+=1
+			}			
+			if (varle[item-6]) {
+				perem[item-6]+=1
+			}
+			if (varle[item+6]) {
+				perem[item+6]+=1
+			}			
+			if (varle[item-7]) {
+				perem[item-7]+=1
+			}
+			if (varle[item+7]) {
+				perem[item+7]+=1
+			}			
+			if (varle[item-7]) {
+				perem[item-7]+=1
+			}
+					
+		}
+			//alert(perem)
+	}
+	function reload() {
+		ctx.beginPath()
+		ctx.rect(50, 50, 600, 600)
+		ctx.strokeStyle="black"
+		ctx.stroke()
+		ctx.closePath()				
+			let rand = Math.floor(Math.random() * varle.length);
+			min.push(varle[rand])				
+			let item=varle[rand].id.toString()
+			item=item.split('')
+			if (item[0]=="a") {
+				img1.style.left=`${680}px`
+				zif(item[1], '1')
+			}
+			if (item[0]=="b") {
+				img1.style.left=`${780}px`
+				zif(item[1], '1')
+			}
+			if (item[0]=="c") {
+				img1.style.left=`${880}px`
+				zif(item[1], '1')
+			}
+			if (item[0]=="d") { 
+				img1.style.left=`${980}px`
+				zif(item[1], '1')
+			}
+			if (item[0]=="e") {
+				img1.style.left=`${1080}px`
+				zif(item[1], '1')
+			}
+			if (item[0]=="f") {
+				img1.style.left=`${1180}px`
+				zif(item[1], '1')
+			}
+			
+			rand = Math.floor(Math.random() * varle.length);
+			min.push(varle[rand])							
+			item=varle[rand].id.toString()
+			item=item.split('')
+			if (item[0]=="a") {
+				img2.style.left=`${680}px`
+				zif(item[1], '2')
+			}
+			if (item[0]=="b") {
+				img2.style.left=`${780}px`
+				zif(item[1], '2')
+			}
+			if (item[0]=="c") {
+				img2.style.left=`${880}px`
+				zif(item[1], '2')
+			}
+			if (item[0]=="d") { 
+				img2.style.left=`${980}px`
+				zif(item[1], '2')
+			}
+			if (item[0]=="e") {
+				img2.style.left=`${1080}px`
+				zif(item[1], '2')
+			}
+			if (item[0]=="f") {
+				img2.style.left=`${1180}px`
+				zif(item[1], '2')
+			}
+
+			rand = Math.floor(Math.random() * varle.length);
+			min.push(varle[rand])				
+			item=varle[rand].id.toString()
+			item=item.split('')
+			if (item[0]=="a") {
+				img3.style.left=`${680}px`
+				zif(item[1], '3')
+			}
+			if (item[0]=="b") {
+				img3.style.left=`${780}px`
+				zif(item[1], '3')
+			}
+			if (item[0]=="c") {
+				img3.style.left=`${880}px`
+				zif(item[1], '3')
+			}
+			if (item[0]=="d") { 
+				img3.style.left=`${980}px`
+				zif(item[1], '3')
+			}
+			if (item[0]=="e") {
+				img3.style.left=`${1080}px`
+				zif(item[1], '3')
+			}
+			if (item[0]=="f") {
+				img3.style.left=`${1180}px`
+				zif(item[1], '3')
+			}
+
+			rand = Math.floor(Math.random() * varle.length);
+			min.push(varle[rand])				
+			item=varle[rand].id.toString()
+			item=item.split('')
+			if (item[0]=="a") {
+				img4.style.left=`${680}px`
+				zif(item[1], '4')
+			}
+			if (item[0]=="b") {
+				img4.style.left=`${780}px`
+				zif(item[1], '4')
+			}
+			if (item[0]=="c") {
+				img4.style.left=`${880}px`
+				zif(item[1], '4')
+			}
+			if (item[0]=="d") { 
+				img4.style.left=`${980}px`
+				zif(item[1], '4')
+			}
+			if (item[0]=="e") {
+				img4.style.left=`${1080}px`
+				zif(item[1], '4')
+			}
+			if (item[0]=="f") {
+				img4.style.left=`${1180}px`
+				zif(item[1], '4')
+			}
+
+			rand = Math.floor(Math.random() * varle.length);
+			min.push(varle[rand])				
+			item=varle[rand].id.toString()
+			item=item.split('')
+			if (item[0]=="a") {
+				img1.style.left=`${680}px`
+				zif(item[1], '5')
+			}
+			if (item[0]=="b") {
+				img5.style.left=`${780}px`
+				zif(item[1], '5')
+			}
+			if (item[0]=="c") {
+				img5.style.left=`${880}px`
+				zif(item[1], '5')
+			}
+			if (item[0]=="d") { 
+				img5.style.left=`${980}px`
+				zif(item[1], '5')
+			}
+			if (item[0]=="e") {
+				img5.style.left=`${1080}px`
+				zif(item[1], '5')
+			}
+			if (item[0]=="f") {
+				img5.style.left=`${1180}px`
+				zif(item[1], '5')
+			}	
+
+		/*min[0]=min[0].id.toString()
+		min[1]=min[1].id.toString()
+		min[2]=min[2].id.toString()
+		min[3]=min[3].id.toString()
+		min[4]=min[4].id.toString()		
+		i=-1
+		
+		for(let item of varle){		
+			i++	
+			varle[i]=varle[i].id.toString()				
+		}
+		return(min, varle)	*/	
+	}
+	reload()
+
+	opal.onclick=function(){
+		a11.style.display = "none";
+		a21.style.display = "none";
+		a31.style.display = "none";
+		a41.style.display = "none";
+		a51.style.display = "none";
+		a61.style.display = "none";
+		b11.style.display = "none";
+		b21.style.display = "none";
+		b31.style.display = "none";
+		b41.style.display = "none";
+		b51.style.display = "none";
+		b61.style.display = "none";
+		c11.style.display = "none";
+		c21.style.display = "none";
+		c31.style.display = "none";
+		c41.style.display = "none";
+		c51.style.display = "none";
+		c61.style.display = "none";
+		d11.style.display = "none";
+		d21.style.display = "none";
+		d31.style.display = "none";
+		d41.style.display = "none";
+		d51.style.display = "none";
+		d61.style.display = "none";
+		e11.style.display = "none";
+		e21.style.display = "none";
+		e31.style.display = "none";
+		e41.style.display = "none";
+		e51.style.display = "none";
+		e61.style.display = "none";
+		f11.style.display = "none";
+		f21.style.display = "none";
+		f31.style.display = "none";
+		f41.style.display = "none";
+		f51.style.display = "none";
+		f61.style.display = "none";
+	}
+	function zifVokMin(perem){
+		a=0
+		for(let item of perem){
+			if (item==0) {
+				perem[a]=''
+				
+			}
+			a++
+		}
+		//alert(a)
+		ctx.beginPath()
+		ctx.fillStyle = "lightred"
+		ctx.font = "italic 60pt Calibri";
+		ctx.fillText(`${perem[0]}`, 80, 125); ctx.fillText(`${perem[1]}`, 80, 225); ctx.fillText(`${perem[2]}`, 80, 325);
+		ctx.fillText(`${perem[3]}`, 80, 425); ctx.fillText(`${perem[4]}`, 80, 525); ctx.fillText(`${perem[5]}`, 80, 625);
+		ctx.fillText(`${perem[6]}`, 180, 125); ctx.fillText(`${perem[7]}`, 180, 225); ctx.fillText(`${perem[8]}`, 180, 325);
+		ctx.fillText(`${perem[9]}`, 180, 425); ctx.fillText(`${perem[10]}`, 180, 525); ctx.fillText(`${perem[11]}`, 180, 625);
+		ctx.fillText(`${perem[12]}`, 280, 125); ctx.fillText(`${perem[13]}`, 280, 225); ctx.fillText(`${perem[14]}`, 280, 325);
+		ctx.fillText(`${perem[15]}`, 280, 425); ctx.fillText(`${perem[16]}`, 280, 525); ctx.fillText(`${perem[17]}`, 280, 625);
+		ctx.fillText(`${perem[18]}`, 380, 125); ctx.fillText(`${perem[19]}`, 380, 225); ctx.fillText(`${perem[20]}`, 380, 325);
+		ctx.fillText(`${perem[21]}`, 380, 425); ctx.fillText(`${perem[22]}`, 380, 525); ctx.fillText(`${perem[23]}`, 380, 625);
+		ctx.fillText(`${perem[24]}`, 480, 125); ctx.fillText(`${perem[25]}`, 480, 225); ctx.fillText(`${perem[26]}`, 480, 325);
+		ctx.fillText(`${perem[27]}`, 480, 425); ctx.fillText(`${perem[28]}`, 480, 525); ctx.fillText(`${perem[29]}`, 480, 625);
+		ctx.fillText(`${perem[30]}`, 580, 125); ctx.fillText(`${perem[31]}`, 580, 225); ctx.fillText(`${perem[32]}`, 580, 325);
+		ctx.fillText(`${perem[33]}`, 580, 425); ctx.fillText(`${perem[34]}`, 580, 525); ctx.fillText(`${perem[35]}`, 580, 625);
+		ctx.fill()
+		ctx.closePath()	
+	}
+
+	a11.onclick=function(){a11.style.display = "none";};a21.onclick=function(){a21.style.display = "none";}
+	a31.onclick=function(){a31.style.display = "none";};a41.onclick=function(){a41.style.display = "none";}
+	a51.onclick=function(){a51.style.display = "none";};a61.onclick=function(){a61.style.display = "none";}
+	b11.onclick=function(){b11.style.display = "none";};b21.onclick=function(){b21.style.display = "none";}
+	b31.onclick=function(){b31.style.display = "none";};b41.onclick=function(){b41.style.display = "none";}
+	b51.onclick=function(){b51.style.display = "none";};b61.onclick=function(){b61.style.display = "none";}
+	c11.onclick=function(){c11.style.display = "none";};c21.onclick=function(){c21.style.display = "none";}
+	c31.onclick=function(){c31.style.display = "none";};c41.onclick=function(){c41.style.display = "none";}
+	c51.onclick=function(){c51.style.display = "none";};c61.onclick=function(){c61.style.display = "none";}
+	d11.onclick=function(){d11.style.display = "none";};d21.onclick=function(){d21.style.display = "none";}
+	d31.onclick=function(){d31.style.display = "none";};d41.onclick=function(){d41.style.display = "none";}
+	d51.onclick=function(){d51.style.display = "none";};d61.onclick=function(){d61.style.display = "none";}
+	e11.onclick=function(){e11.style.display = "none";};e21.onclick=function(){e21.style.display = "none";}
+	e31.onclick=function(){e31.style.display = "none";};e41.onclick=function(){e41.style.display = "none";}
+	e51.onclick=function(){e51.style.display = "none";};e61.onclick=function(){e61.style.display = "none";}
+	f11.onclick=function(){f11.style.display = "none";};f21.onclick=function(){f21.style.display = "none";}
+	f31.onclick=function(){f31.style.display = "none";};f41.onclick=function(){f41.style.display = "none";}
+	f51.onclick=function(){f51.style.display = "none";};f61.onclick=function(){f61.style.display = "none";}
+	let ska=retNumMin(min, varle)
+	checkOkrug(perem, min, ska,varle)
+	zifVokMin(perem)	
+</script>
+</body>
+</html>

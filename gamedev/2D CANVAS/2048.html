@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: lightyellow; display: block; margin: 0 auto; }
+    	body{
+    		background: gray;
+    	}
+    	
+    </style>
+</head>
+<body>
+
+
+
+<canvas id="myCanvas" width="900" height="900"></canvas>
+
+<script>
+
+positionAll=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+let canvas=document.getElementById("myCanvas");
+let ctx=canvas.getContext("2d")
+function pole() {
+	ctx.beginPath()
+	ctx.rect(200, 200, 500, 500)//obod
+	ctx.rect(200, 200, 125, 125)//elem
+	ctx.rect(200, 325, 125, 125)
+	ctx.rect(200, 450, 125, 125)
+	ctx.rect(200, 575, 125, 125)
+	ctx.rect(325, 200, 125, 125)
+	ctx.rect(325, 325, 125, 125)
+	ctx.rect(325, 450, 125, 125)
+	ctx.rect(325, 575, 125, 125)
+	ctx.rect(450, 200, 125, 125)
+	ctx.rect(450, 325, 125, 125)
+	ctx.rect(450, 450, 125, 125)
+	ctx.rect(450, 575, 125, 125)
+	ctx.rect(575, 200, 125, 125)
+	ctx.rect(575, 325, 125, 125)
+	ctx.rect(575, 450, 125, 125)
+	ctx.rect(575, 575, 125, 125)
+	ctx.strokeStyle="black"
+	ctx.stroke()
+	ctx.closePath()	
+}
+function createYellowAndNum(num, item){
+	positionAll[num]=item
+	ctx.beginPath()
+
+	if (num==0){ctx.rect(x=200, y=200, 125, 125)}
+	if (num==1){ctx.rect(x=200, y=325, 125, 125)}
+	if (num==2){ctx.rect(x=200, y=450, 125, 125)}
+	if (num==3){ctx.rect(x=200, y=575, 125, 125)}
+	if (num==4){ctx.rect(x=325, y=200, 125, 125)}
+	if (num==5){ctx.rect(x=325, y=325, 125, 125)}
+	if (num==6){ctx.rect(x=325, y=450, 125, 125)}
+	if (num==7){ctx.rect(x=325, y=575, 125, 125)}
+	if (num==8){ctx.rect(x=450, y=200, 125, 125)}
+	if (num==9){ctx.rect(x=450, y=325, 125, 125)}
+	if (num==10){ctx.rect(x=450, y=450, 125, 125)}
+	if (num==11){ctx.rect(x=450, y=575, 125, 125)}
+	if (num==12){ctx.rect(x=575, y=200, 125, 125)}
+	if (num==13){ctx.rect(x=575, y=325, 125, 125)}
+	if (num==14){ctx.rect(x=575, y=450, 125, 125)}
+	if (num==15){ctx.rect(x=575, y=575, 125, 125)}
+
+	ctx.fillStyle="yellow"
+	ctx.fill()
+	ctx.closePath()
+
+	ctx.beginPath()
+	ctx.font = "80px Arial";
+	ctx.fillStyle="black"
+	ctx.fillText(`${item}`, x+40, y+95);
+}
+function updpol(positionAll){	
+	let numiter=0
+	for(let item of positionAll){
+		if (item!==0) {			
+			createYellowAndNum(numiter, item)
+		}
+		numiter+=1
+	}
+	pole()	
+}
+
+function addInEmp(positionAll){
+	emp=[]
+	numm=0
+	x=2
+	for(let item of positionAll){
+		numm+=1
+		if (item==0) {
+			emp.push(numm)
+			
+		}
+		
+	}	
+
+	rr=Math.floor(Math.random() * emp.length);
+	//alert(rr)
+	positionAll[rr]=x
+	updpol(positionAll)
+}
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+addInEmp(positionAll)
+
+document.addEventListener("keydown", keyDownHandler, false)
+//document.addEventListener("keyup", keyUpHandler, false)
+
+function keyDownHandler(e){
+	if (e.keyCode==37) {
+		detectBut(e.keyCode, positionAll)
+	}
+	else if (e.keyCode==38) {
+		detectBut(e.keyCode, positionAll)
+	}
+	else if (e.keyCode==39) {
+		detectBut(e.keyCode, positionAll)
+	}
+	else if (e.keyCode==40) {
+		detectBut(e.keyCode, positionAll)
+	}
+}
+
+pole()
+updpol(positionAll)
+</script>
+</body>
+</html>

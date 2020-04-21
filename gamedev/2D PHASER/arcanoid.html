@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Phaser Workshop - lesson 01: Initialize the framework</title>
+    <style>* { padding: 0; margin: 0; }</style>
+    <script src="js/phaser.min.js"></script>
+</head>
+<body>
+<script>
+    var game = new Phaser.Game(480, 320, Phaser.CANVAS, null, {
+      preload: preload, create: create, update: update
+    });
+    let lives=3
+    let ball
+    let paddle
+    var scoreText;
+    var score = 0;
+    function preload() {
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    game.stage.backgroundColor = '#DC143C';
+    game.load.image('ball', 'ball.png');
+    game.load.image('paddle', 'plat.png');
+    game.load.image('brick', 'brick.png');
+    }
+    function create() {
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        ball = game.add.sprite(game.world.width*0.5, game.world.height-120, 'ball');
+        ball.anchor.set(0.1);//не выкидывает острау вниз
+        game.physics.enable(ball, Phaser.Physics.ARCADE);
+        ball.body.collideWorldBounds = true;//не дает выйти за края
+        ball.body.bounce.set(1);//отпрыгивает
+        ball.body.velocity.set(150, -150);//направление мяча(начальное)
+        paddle = game.add.sprite(game.world.width*0.5, game.world.height-5, 'paddle');
+        paddle.anchor.set(0.5,1);//существование острау
+        game.physics.enable(paddle, Phaser.Physics.ARCADE);//отскакивание от острау
+        paddle.body.immovable = true;
+        game.physics.arcade.checkCollision.down = false;
+        ball.checkWorldBounds = true;
+        initBricks()
+ball.events.onOutOfBounds.add(function(){
+    lives-=1
+    if (lives==0) {alert('Game over!'); location.reload();}
+    else{
+        ball.body.velocity.set(150, -150);
+    }
+   
+}, this);
+    scoreText = game.add.text(5, 5, 'Points: 0', { font: '18px Arial', fill: '#0095DD' });
+
+
+    }
+    function update() {
+        game.physics.arcade.collide(ball, paddle);
+        game.physics.arcade.collide(ball, bricks, ballHitBrick);
+        paddle.x = game.input.x || game.world.width*0.5;
+}
+
+function ballHitBrick(ball, brick) {
+    brick.kill();
+    score += 10;
+    scoreText.setText('Points: '+score);
+    if (score==210) {alert("win")}
+}
+
+
+function initBricks() {
+    brickInfo = {
+        width: 50,
+        height: 20,
+        count: {
+            row: 3,
+            col: 7
+        },
+        offset: {
+            top: 50,
+            left: 60
+        },
+        padding: 10
+    };
+bricks = game.add.group();
+for(c=0; c<brickInfo.count.col; c++) {
+    for(r=0; r<brickInfo.count.row; r++) {
+        var brickX = (c*(brickInfo.width+brickInfo.padding))+brickInfo.offset.left;
+        var brickY = (r*(brickInfo.height+brickInfo.padding))+brickInfo.offset.top;
+        newBrick = game.add.sprite(brickX, brickY, 'brick');
+        game.physics.enable(newBrick, Phaser.Physics.ARCADE);
+        newBrick.body.immovable = true;
+        newBrick.anchor.set(0.5);
+        bricks.add(newBrick);
+    }
+}
+}
+</script>
+</body>
+</html>

@@ -8,11 +8,19 @@
 			background: red;
 			border-radius: 50%;
 		}
+		#time{
+			position: absolute;
+			left: 1800px;
+			top: 100px;
+			font-size: 60px;
+		}
 	</style>
 </head>
 <body>
 	<input type="button" id="asd">
+<p id="time"></p>
 <script type="text/javascript">
+t=40
 x=10
 y1= Math.random() * (1580 - 20) + 20;
 y2= Math.random() * (880 - 20) + 20;
@@ -21,12 +29,17 @@ function createBall(x, y1, y2){
 	asd.style.width=`${x}px`
 	asd.style.marginLeft=`${y1/2}px`
 	asd.style.marginTop=`${y2/2}px`
+	if (x==60) {alert('defeat'); location.reload()}
 }
-//createBall(x+=1, y1-=1, y2-=1)
+
+
+setInterval(() => time.innerHTML=`${t--}`, 1000);
+
 setInterval(() => createBall(x+=1, y1-=1, y2-=1), 20);
 asd.onclick=function(){
 	asd.style.display="none"
 	x=10
+	if (t<0) {alert('win'); location.reload()}
 	y1= Math.random() * (1580 - 20) + 20;
 	y2= Math.random() * (880 - 20) + 20;
 	createBall(x+=1, y1-=1, y2-=1)

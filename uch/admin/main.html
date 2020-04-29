@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<style type="text/css">
+		body{
+			margin:0px;
+			padding:0px;
+		}
+		header{
+			height: 160px;
+			background: lightgray;					
+			width: 100%;
+		}
+		#login{
+			position: absolute;	
+			right: 300px;
+			top: 50px;
+			width: 180px;
+			height: 50px;
+			font-size: 24px;
+		}
+		#password{
+			position: absolute;
+			right: 100px;
+			top: 50px;
+			width: 180px;
+			height: 50px;
+			font-size: 24px;
+		}
+		#open{
+			position: absolute;
+			height: 30px;
+			width: 60px;
+			right: 20px;
+			top: 65px;
+		}
+		#home{
+			position: absolute;
+			height: 160px;
+			width: 160px;
+			background: lightyellow			
+		}
+	</style>
+</head>
+<body>
+<header>
+	<div>
+		<input type="text" id="login" placeholder="login">
+		<input type="text" id="password" placeholder="password">
+		<input type="button" value="ВХОД" id="open" onclick='enter()'>
+		<input type="button" value="HOME" id="home" onclick='home()'>
+	</div>
+</header>
+<main>
+	<h1 id="h11">
+		admin
+	</h1>
+</main>
+<script src="../srcc.js"></script>
+<script>
+function home(){
+	location.href='../hernyasuhetkami.html'
+}
+function enter(){
+	ind=logins.indexOf(login.value)
+	if (password.value!==passwords[ind]) {alert('Неверный логин или пароль')}
+	else{
+		location.href=`${links[ind]}`
+	}
+
+}
+</script>
+</body>
+</html>

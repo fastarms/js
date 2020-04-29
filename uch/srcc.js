@@ -1,3 +1,3 @@
 logins=['admin', 'jack', 'fa']
 passwords=['hesoyam', 'loh', 'q']
-links=['../admin/main.html', '../jack/main.html', '../fa/main.html']
+links=['/uch/admin/main.html', '/uch/jack/main.html', '/uch/fa/main.html']

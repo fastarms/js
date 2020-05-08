@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>gunslinger</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px; 
+			transform: scale(0.4);
+		}
+		#window{
+			background: lightblue;
+			width: 1280px;
+			height: 660px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+		#buygun{
+			background: gray;
+			position: relative;
+			width: 640px;
+			height: 665px;
+			margin-top: -154px;
+		}
+		#cl{
+			background: #FFA500;
+			position: relative;
+			width: 640px;
+			height: 150px;
+			left: 50%;
+			top: 516px;
+		}
+		#cl:hover{
+			background: #FA8072;
+		}
+		#doll{
+			position: absolute;
+			left: 690px;
+			top: 10px;
+
+		}
+		#dol{
+			position: absolute;
+			left: 660px;
+			top: 10px;
+		}
+		.money{
+			font-size: 32px;
+		}
+		.empgun{
+			height: 110px;
+			border-radius: 5px;
+			border:0.5px black solid;
+			color: lightgray;
+			font-size: 32px;			
+		}
+		.gun{
+			margin-left: 10px;
+			display: inline;
+			vertical-align: top;
+			text-align: center;
+		}
+		.pic{
+			margin-left: 5px;
+			margin-top: 5px;
+		}
+		#buy1{
+			position: absolute;
+			height: 100px;
+			width: 150px;
+			top: 5px;
+			right: 5px;
+			border-radius: 20%;
+		}
+		#buy2{
+			position: absolute;
+			height: 100px;
+			width: 150px;
+			top: 116px;
+			right: 5px;
+			border-radius: 20%;
+		}
+		#buy3{
+			position: absolute;
+			height: 100px;
+			width: 150px;
+			top: 227px;
+			right: 5px;
+			border-radius: 20%;
+		}
+		#buy4{
+			position: absolute;
+			height: 100px;
+			width: 150px;
+			top: 338px;
+			right: 5px;
+			border-radius: 20%;
+		}
+		#buy5{
+			position: absolute;
+			height: 100px;
+			width: 150px;
+			top: 449px;
+			right: 5px;
+			border-radius: 20%;
+		}
+		#buy6{
+			position: absolute;
+			height: 100px;
+			width: 150px;
+			top: 560px;
+			right: 5px;
+			border-radius: 20%;
+		}
+		.infgun{
+			position: relative;
+			left: 173px;
+			top: -110px;
+			width: 300px;
+			height: 100px;
+		}
+		.inl1{
+			display: inline-block;
+		}
+		.inl2{
+			display: inline-block;
+			position: relative;
+			top: -69px;
+		}
+		#nedost{
+			position: absolute;
+			left: 660px;
+			top: 60px;
+			font-size: 40px;
+			display: none;
+		}
+		#saveshow{
+			position: absolute;
+			left: 660px;
+			top: 110px;
+			font-size: 40px;
+			display: none;
+		}
+		#clearing{
+			width: 50px;
+			height: 20px;
+			position: absolute;
+			left: 1230px;
+			top: 460px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div id="window">
+<input type="button" id="cl">
+<p id="doll" class="money">0</p><p class="money" id="dol">$:</p>
+<p id="nedost">Недостаточно средств</p>
+<p id="saveshow">save</p>
+
+<div id="buygun">
+
+	<div class="empgun">
+	<input type="image" src="1.jpg" width="150px"  height="100px" class="pic">
+	<p class="gun">glock-20</p>
+	<div class="infgun">
+	<p class="inl1">Куплено:</p><p id="buying1" class="inl1">0</p><br>
+	<p class="inl2">Цена:</p><p class="inl2" id="price1">100</p>
+	</div>
+	<input type="button" id="buy1" class="buy" value="КУПИТЬ"></div>
+
+	<div class="empgun">
+	<input type="image" src="2.jpg" width="150px"  height="100px" class="pic">
+	<p class="gun">Desert Eagle</p>
+	<div class="infgun">
+	<p class="inl1">Куплено:</p><p id="buying2" class="inl1">0</p><br>
+	<p class="inl2">Цена:</p><p class="inl2" id="price2">1000</p>
+	</div>
+	<input type="button" id="buy2" class="buy" value="КУПИТЬ"></div>
+
+	<div class="empgun">
+	<input type="image" src="3.jpg" width="150px"  height="100px" class="pic">
+	<p class="gun">MP5</p>
+	<div class="infgun">
+	<p class="inl1">Куплено:</p><p id="buying3" class="inl1">0</p><br>
+	<p class="inl2">Цена:</p><p class="inl2" id="price3">10000</p>
+	</div>
+	<input type="button" id="buy3" class="buy" value="КУПИТЬ"></div>
+
+	<div class="empgun">
+	<input type="image" src="4.jpg" width="150px"  height="100px" class="pic">
+	<p class="gun">AK-47</p>
+	<div class="infgun">
+	<p class="inl1">Куплено:</p><p id="buying4" class="inl1">0</p><br>
+	<p class="inl2">Цена:</p><p class="inl2" id="price4">100000</p>
+	</div>
+	<input type="button" id="buy4" class="buy" value="КУПИТЬ"></div>
+
+	<div class="empgun">
+	<input type="image" src="5.jpg" width="150px"  height="100px" class="pic">
+	<p class="gun">AR-15</p>
+	<div class="infgun">
+	<p class="inl1">Куплено:</p><p id="buying5" class="inl1">0</p><br>
+	<p class="inl2">Цена:</p><p class="inl2" id="price5">1000000</p>
+	</div>
+	<input type="button" id="buy5" class="buy" value="КУПИТЬ"></div>
+
+	<div class="empgun">
+	<input type="image" src="6.jpg" width="150px"  height="100px" class="pic">
+	<p class="gun">6G30</p>
+	<div class="infgun">
+	<p class="inl1">Куплено:</p><p id="buying6" class="inl1">0</p><br>
+	<p class="inl2">Цена:</p><p class="inl2" id="price6">10000000</p>
+	</div>
+	<input type="button" id="buy6" class="buy" value="КУПИТЬ"></div>
+
+</div>
+<input type="button" id="clearing" value="clear">
+</div>
+
+<script type="text/javascript">
+//alert(localStorage.getItem('a'))
+function checkDol(dol, zap) {
+	if (dol>=zap) {
+		return true
+	}
+	else{		
+		return false
+	}
+}
+
+
+dol= localStorage.getItem('dol')
+doll.innerHTML=dol
+function passiv(sale1, sale2, sale3, sale4, sale5, sale6){	
+	dol=doll.innerHTML
+	dol= +dol + +sale1/100	
+	dol= +dol + +sale2/10
+	dol=dol.toFixed(4)
+	dol= +dol + +sale3
+	dol= +dol + +sale4*10
+	dol= +dol + +sale5*100
+	dol= +dol + +sale6*1000
+	
+	
+	doll.innerHTML=dol
+	
+}
+cl.onclick=function(){
+	valcl=1 + ( +buying1.innerHTML*0.0001) + ( +buying2.innerHTML*0.001) + ( +buying3.innerHTML*0.01) + ( +buying4.innerHTML*0.1) + ( +buying5.innerHTML*1) + ( +buying6.innerHTML*10)
+	dol= +dol+ +valcl
+	dol=dol.toFixed(4)
+	doll.innerHTML=dol
+	
+}
+sale1=localStorage.getItem('kolvo1')
+gun1=localStorage.getItem('price1')
+if (sale1==null) {sale1=0}
+if (gun1==null) {gun1=100}
+buying1.innerHTML=sale1
+price1.innerHTML=gun1
+function ubrned(){nedost.style.display="none"}
+buy1.onclick=function(){
+	if(checkDol(dol, gun1)){
+		dol = +dol - +gun1
+		sale1= +sale1 + 1
+		gun1*=2
+		buying1.innerHTML=sale1
+		price1.innerHTML=gun1
+		doll.innerHTML=dol
+	}	
+	else{
+		nedost.style.display="block"
+		setTimeout(ubrned, 1000);
+	}
+	}
+sale2=localStorage.getItem('kolvo2')
+gun2=localStorage.getItem('price2')
+if (sale2==null) {sale2=0}
+if (gun2==null) {gun2=1000}
+buying2.innerHTML=sale2
+price2.innerHTML=gun2
+
+buy2.onclick=function(){
+	if(checkDol(dol, gun2)){
+		dol = +dol - +gun2
+		sale2= +sale2 + 1
+		gun2*=2
+		buying2.innerHTML=sale2
+		price2.innerHTML=gun2
+		doll.innerHTML=dol
+	}	
+	else{
+		nedost.style.display="block"
+		setTimeout(ubrned, 1000);
+	}
+	}
+sale3=localStorage.getItem('kolvo3')
+gun3=localStorage.getItem('price3')
+if (sale3==null) {sale3=0}
+if (gun3==null) {gun3=10000}
+buying3.innerHTML=sale3
+price3.innerHTML=gun3
+buy3.onclick=function(){
+	if(checkDol(dol, gun3)){
+		dol = +dol - +gun3
+		sale3= +sale3 + 1
+		gun3*=2
+		buying3.innerHTML=sale3
+		price3.innerHTML=gun3
+		doll.innerHTML=dol
+	}	
+	else{
+		nedost.style.display="block"
+		setTimeout(ubrned, 1000);
+	}
+	}
+sale4=localStorage.getItem('kolvo4')
+gun4=localStorage.getItem('price4')
+if (sale4==null) {sale4=0}
+if (gun4==null) {gun4=100000}
+buying4.innerHTML=sale4
+price4.innerHTML=gun4
+buy4.onclick=function(){
+	if(checkDol(dol, gun4)){
+		dol = +dol - +gun4
+		sale4= +sale4 + 1
+		gun4*=2
+		buying4.innerHTML=sale4
+		price4.innerHTML=gun4
+		doll.innerHTML=dol
+	}	
+	else{
+		nedost.style.display="block"
+		setTimeout(ubrned, 1000);	
+	}
+	}
+sale5=localStorage.getItem('kolvo5')
+gun5=localStorage.getItem('price5')
+if (sale5==null) {sale5=0}
+if (gun5==null) {gun5=1000000}
+buying5.innerHTML=sale5
+price5.innerHTML=gun5
+buy5.onclick=function(){
+	if(checkDol(dol, gun5)){
+		dol = +dol - +gun5
+		sale5= +sale5 + 1
+		gun5*=2
+		buying5.innerHTML=sale5
+		price5.innerHTML=gun5
+		doll.innerHTML=dol
+	}	
+	else{
+		nedost.style.display="block"
+		setTimeout(ubrned, 1000);
+	}
+	}
+sale6=localStorage.getItem('kolvo6')
+gun6=localStorage.getItem('price6')
+if (sale6==null) {sale6=0}
+if (gun6==null) {gun6=10000000}
+buying6.innerHTML=sale6
+price6.innerHTML=gun6
+buy6.onclick=function(){
+	if(checkDol(dol, gun6)){
+		dol = +dol - +gun6
+		sale6= +sale6 + 1
+		gun6*=2
+		buying6.innerHTML=sale6
+		price6.innerHTML=gun6
+		doll.innerHTML=dol
+	}	
+	else{
+		nedost.style.display="block"
+		setTimeout(ubrned, 1000);	
+	}
+	}
+a=0
+function save(){
+	localStorage.setItem('dol', dol)
+	localStorage.setItem('kolvo1', sale1)
+	localStorage.setItem('kolvo2', sale2)
+	localStorage.setItem('kolvo3', sale3)
+	localStorage.setItem('kolvo4', sale4)
+	localStorage.setItem('kolvo5', sale5)
+	localStorage.setItem('kolvo6', sale6)
+	localStorage.setItem('price1', gun1)
+	localStorage.setItem('price2', gun2)
+	localStorage.setItem('price3', gun3)
+	localStorage.setItem('price4', gun4)
+	localStorage.setItem('price5', gun5)
+	localStorage.setItem('price6', gun6)
+}
+
+passiving=setInterval(() => passiv(buying1.innerHTML, buying2.innerHTML, buying3.innerHTML, buying4.innerHTML, buying5.innerHTML, buying6.innerHTML, dol), 1000);
+saving=setInterval(() => save(), 100)
+
+clearing.onclick=function(){
+	localStorage.clear('dol')
+	clearInterval(passiving)
+	clearInterval(saving)
+}
+
+
+//setInterval(()=> save(), 1000)
+</script>
+</body>
+</html>

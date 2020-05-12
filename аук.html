@@ -5,7 +5,7 @@
 	<title>АУК</title>
 	<style type="text/css">
 		body{
-			background: url("https://images.wallpaperscraft.ru/image/kraska_raznotsvetnyj_nalozhenie_139992_1920x1080.jpg");
+			background: url("https://images.wallpaperscraft.ru/image/mlechnyj_put_zvezdnoe_nebo_galaktika_119519_1920x1200.jpg");
 			}
 		header{
 			background: #9932CC;
@@ -41,7 +41,7 @@
 			width: 120px;
 		}
 		.but1{
-			background:inherit;
+			background: green;
 			position: relative;
 			top:0px;
 			left:5px;
@@ -52,7 +52,7 @@
 			font-size: 30px;
 		}
 		.but1:hover{
-			background: black;
+			background: red;
 			color:white;
 		}
 		.time{
@@ -125,14 +125,35 @@
 			color:white;
 			font-size: 140px;
 		}
+		#allmoney0{
+			color: white;
+			position: absolute;
+			top: 450px;
+			right: 20px; 
+		}
+		#allmoney1{
+			color: white;
+			position: absolute;
+			top: 450px;
+			right: 0px; 
+		}
+		#allmoneyclear{
+			position: absolute;
+			top: 500px;
+			right: 0px; 
+			display: none;
+		}
+		.tirr{
+			color:white;
+		}
 	</style>
 </head>
 <body>
 <header><p><img src="logo.png" class="logo"> АУКЦИОН</p>
 </header>
 <div class="first">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="firf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="firf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="firt">
 	<input type="button" name="but1" value="+" class="but1" id="but1">
 </div>
@@ -142,11 +163,14 @@ but1.onclick=function(){
 	var us=firt.value;	
 	firf.value=Number(su)+Number(us);
 	firt.value="";
+	allmoney2= +allmoney2 + +firf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="two">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="twof"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="twof"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="twot">
 	<input type="button" name="but1" value="+" class="but1" id="but2">
 </div>
@@ -156,11 +180,14 @@ but2.onclick=function(){
 	var us=twot.value;	
 	twof.value=Number(su)+Number(us);
 	twot.value="";
+	allmoney2= +allmoney2 + +twof.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="three">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="thrf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="thrf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="thrt">
 	<input type="button" name="but1" value="+" class="but1" id="but3">
 </div>
@@ -170,11 +197,14 @@ but3.onclick=function(){
 	var us=thrt.value;	
 	thrf.value=Number(su)+Number(us);
 	thrt.value="";
+	allmoney2= +allmoney2 + +thrf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="four">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="fouf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="fouf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="fout">
 	<input type="button" name="but1" value="+" class="but1" id="but4">
 </div>
@@ -184,11 +214,14 @@ but4.onclick=function(){
 	var us=fout.value;	
 	fouf.value=Number(su)+Number(us);
 	fout.value="";
+	allmoney2= +allmoney2 + +fouf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="five">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="fivf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="fivf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="fivt">
 	<input type="button" name="but1" value="+" class="but1" id="but5">
 </div>
@@ -198,11 +231,14 @@ but5.onclick=function(){
 	var us=fivt.value;	
 	fivf.value=Number(su)+Number(us);
 	fivt.value="";
+	allmoney2= +allmoney2 + +fivf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="six">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="sixf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="sixf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="sixt">
 	<input type="button" name="but1" value="+" class="but1" id="but6">
 </div>
@@ -212,11 +248,14 @@ but6.onclick=function(){
 	var us=sixt.value;	
 	sixf.value=Number(su)+Number(us);
 	sixt.value="";
+	allmoney2= +allmoney2 + +sixf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="seven">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="sevf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="sevf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="sevt">
 	<input type="button" name="but1" value="+" class="but1" id="but7">
 </div>
@@ -226,11 +265,14 @@ but7.onclick=function(){
 	var us=sevt.value;	
 	sevf.value=Number(su)+Number(us);
 	sevt.value="";
+	allmoney2= +allmoney2 + +sevf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="eith">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="eigf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="eigf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="eigt">
 	<input type="button" name="but1" value="+" class="but1" id="but8">
 </div>
@@ -240,11 +282,14 @@ but8.onclick=function(){
 	var us=eigt.value;	
 	eigf.value=Number(su)+Number(us);
 	eigt.value="";
+	allmoney2= +allmoney2 + +eigf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="nine">
-	<input type="text" name="firstname" class="in p1"><p>-</p>
-	<input type="number" name="firstmoney" class="in p2" id="ninf"><p>P</p>
+	<input type="text" name="firstname" class="in p1"><p class="tirr">-</p>
+	<input type="number" name="firstmoney" class="in p2" id="ninf"><p class="tirr">P</p>
 	<input type="number" name="firstmoney2" class="in p3" id="nint">
 	<input type="button" name="but1" value="+" class="but1" id="but9">
 </div>
@@ -254,6 +299,9 @@ but9.onclick=function(){
 	var us=nint.value;	
 	ninf.value=Number(su)+Number(us);
 	nint.value="";
+	allmoney2= +allmoney2 + +ninf.value
+	allmoney0.innerHTML=allmoney2
+	localStorage.setItem('allmoney', `${allmoney2}`)
 }
 </script>
 <div class="time">
@@ -264,8 +312,17 @@ but9.onclick=function(){
 	<input type="button" name="but2" value="СБРОС" class="but66" id="but66">
 </div>
 <p class="tim" id="asd"></p>
+<p id="allmoney0">0</p><p id="allmoney1">p.</p>
+<input type="button" id="allmoneyclear" value='clear'>
 <script>
-
+let allmoney2=localStorage.getItem('allmoney');
+if (allmoney2==null) {
+	allmoney2=0
+	allmoney0.innerHTML=allmoney2
+}
+else{
+	allmoney0.innerHTML=allmoney2
+}
 var min=10;
 var sec=String(0) + 0;//
 asd.innerHTML= min + ":" + sec;
@@ -315,6 +372,17 @@ but66.onclick=function(){
 	clearInterval(stopp);
 	asd.innerHTML= min + ":" + sec;
 };
+
+allmoneyclear.onclick=function(){
+	let hh=prompt('pass')
+	if (hh=='asd') {
+		localStorage.clear()
+	}
+	else{
+		alert('Неверный пароль')
+	}
+}
+localStorage.setItem('allmoney', `${allmoney2}`)
 </script>
 </body>
 </html>

@@ -24,6 +24,7 @@
   		height: 26px;
   	}
   	.blo{
+  		margin-top: 10px; 
   		padding-top: 0px;
   		width: 120px;
   		height: 100px;
@@ -48,6 +49,7 @@
   	}
   	#relvis{
   		width: 50px;
+  		margin-top:10px; 
   	}
   </style>
 </head>
@@ -58,7 +60,7 @@
 <div id="polya"></div>
 <p id="nalcm" style="display: none"></p>
 <input type="button" id="relvis" value="clear"><span>выставлены:  </span><span id="vistavlenii"></span><br>
-<span>игроки:  </span><span id="ssss"></span>
+<span style="display: none">игроки:  </span><span style="display: none" id="ssss"></span>
 <script type="text/javascript">
 window.mir=[]
 window.vistavv=[]
@@ -92,10 +94,11 @@ function relsost() {
 				}
 			}
 		}
+
 		if (i!==sost.length) {ssss.append(',  ')}
 		else{ssss.append('.')}
 		if (mafia.length==mir.length) {alert('Победа мафии'); location.reload()} 
-		if (mafia.length==0) {alert('Победа мирных');location.reload()}
+		if (mafia.length==0) {alert('Победа мирных'); location.reload()}
 	}
 console.log(mafia, mir)	
 }
@@ -152,8 +155,15 @@ function pok(){
 				rect.append('  мафия')
 			}
 		}	
-		polya.append(rect)			
-		//changesost('Жив', i, 1)		
+		
+		br=document.createElement('br')
+		p=document.createElement('p')
+		p.innerHTML='Жив'
+		p.className='classSost'
+		rect.append(p)
+		polya.append(rect)	
+			
+			
 	}
 }
 	function cm(x, y) {
@@ -185,11 +195,23 @@ function pok(){
 		p1.onclick=function () {
 			aa=Math.floor(x/122)+1
 			sost[aa-1]='Посажен'
+			pp=document.getElementsByClassName('classSost')
+			xxxx=0
+			for(let item of pp){
+				xxxx++				
+				if (xxxx==aa) {item.innerHTML='Посажен'}				
+			}
 			relsost()
 		}
 		p3.onclick=function () {
 			aa=Math.floor(x/122)+1
 			sost[aa-1]='Убит'
+			pp=document.getElementsByClassName('classSost')
+			xxxx=0
+			for(let item of pp){
+				xxxx++				
+				if (xxxx==aa) {item.innerHTML='Убит'}				
+			}
 			relsost()
 		}
 	}

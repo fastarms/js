@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <title>mafia script</title>
+  <style type="text/css">
+  	body{
+  		margin: 0px;
+  	}
+  	input{
+  		width: 200px;
+  		height: 20px;
+  	}
+  	#cons{
+  		position: fixed;
+  		top: 0px;
+  		right: 200px;
+  	}
+  	#congo{
+  		position: fixed;
+  		top: 0px;
+  		right: 150px;
+  		width: 50px;
+  		height: 26px;
+  	}
+  	.blo{
+  		padding-top: 0px;
+  		width: 120px;
+  		height: 100px;
+  		border: 0.1px solid black;
+  		display: inline-block;
+  	}
+  	.contmenu{
+  		position: absolute;
+  		width: 200px;
+  		height: 200px;
+  		background: lightgray;  	
+  		z-index: 9200;	
+  	}
+  	.econtmenu{
+  		margin: 0px;
+  		width: 99%;
+  		height: 50px; 
+  		text-align: center; 		
+  	}
+  	.econtmenu:hover{
+  		border: 0.1px solid black;
+  	}
+  	#relvis{
+  		width: 50px;
+  	}
+  </style>
+</head>
+<body>
+<input type="number" max="11" min="5" placeholder="количество игроков" id="kolvoigr" value="11">
+<input type="number" placeholder="количество мафий" id="kolvomaf" max="4" min="3" value="4">
+<input type="button" value="Сгенерировать" id="gener">
+<div id="polya"></div>
+<p id="nalcm" style="display: none"></p>
+<input type="button" id="relvis" value="clear"><span>выставлены:  </span><span id="vistavlenii"></span><br>
+<span>игроки:  </span><span id="ssss"></span>
+<script type="text/javascript">
+window.mir=[]
+window.vistavv=[]
+window.mafia=[]
+window.kom=0
+window.don=0
+window.sost=[]
+function relsost() {
+	ssss.innerHTML=''
+	for (var i = 1; i < sost.length+1; i++) {
+		ssss.append(i+': '+sost[i-1])
+		if ((sost[i-1])=='Убит'||(sost[i-1])=='Посажен') {
+			if (mir.includes(i)) {
+				x=-1
+				for(let item of mir){
+					x++
+					if(item==i){
+						mir.splice(x, 1)
+					}
+				}
+			}
+		}
+		if ((sost[i-1])=='Убит'||(sost[i-1])=='Посажен') {
+			if (mafia.includes(i)) {
+				x=-1
+				for(let item of mafia){
+					x++
+					if(item==i){
+						mafia.splice(x, 1)
+					}
+				}
+			}
+		}
+		if (i!==sost.length) {ssss.append(',  ')}
+		else{ssss.append('.')}
+		if (mafia.length==mir.length) {alert('Победа мафии'); location.reload()} 
+		if (mafia.length==0) {alert('Победа мирных');location.reload()}
+	}
+console.log(mafia, mir)	
+}
+gener.onclick=function () {
+	ki=+kolvoigr.value+1
+	km=+kolvomaf.value+1
+	zzzz=0
+	window.mir=[]
+	window.mafia=[]
+	for (var i = 1; i < ki; i++) {
+		zzzz++
+		window.mir.push(zzzz)
+	}
+	for (var i = 1; i < ki; i++) {
+		sost.push('Жив')
+	}	
+	for (var i = 1; i < km; i++) {
+		var rand = Math.floor(Math.random() * window.mir.length);
+		window.mafia.push(window.mir[rand])
+		window.mir.splice(rand, 1)
+		}	
+	window.mafia=window.mafia.sort()
+	doni = Math.floor(Math.random() * window.mafia.length);
+	window.don=window.mafia[doni]
+	komi = Math.floor(Math.random() * window.mir.length);
+	window.kom=window.mir[komi]		
+	relsost()
+	pok()
+}
+function pok(){
+	ki=+kolvoigr.value+1
+	dell=document.getElementsByClassName('contmenu')		
+	for (var i = 1; i < ki; i++) {
+		rect=document.createElement('div')		
+		rect.oncontextmenu=function () {			
+			cm(event.clientX, event.clientY)
+			return false}
+		rect.className='blo'
+		rect.innerHTML=i
+		
+		if (mir.includes(i)) {
+			if (i==kom) {
+				rect.append('  коммисар')
+			}
+			else{
+				rect.append('  мирный')
+			}
+		}	
+		if (mafia.includes(i)) {
+			if (i==don) {
+				rect.append('  дон')
+			}
+			else{
+				rect.append('  мафия')
+			}
+		}	
+		polya.append(rect)			
+		//changesost('Жив', i, 1)		
+	}
+}
+	function cm(x, y) {
+		if (nalcm.innerHTML=='1') {div.remove()}
+		nalcm.innerHTML='1'
+		div=document.createElement('div')
+		document.body.append(div)
+		div.style.left=x+'px'
+		div.style.top=y+'px'
+		div.className='contmenu'
+		p1=document.createElement('p')
+		p2=document.createElement('p')
+		p3=document.createElement('p')
+		p4=document.createElement('p')
+		p1.innerHTML='посадить'
+		p2.innerHTML='выставить'
+		p3.innerHTML='убить'
+		p4.innerHTML='наебать'
+		p1.className=p2.className=p3.className=p4.className='econtmenu'
+		div.append(p1);div.append(p2);div.append(p3);div.append(p4)		
+		document.onclick=function(){
+			nalcm.innerHTML='0'
+			div.remove()			
+		}
+		p2.onclick=function () {	
+			aa=Math.floor(x/122)+1+'  '
+			vistavlenii.append(aa)
+		}
+		p1.onclick=function () {
+			aa=Math.floor(x/122)+1
+			sost[aa-1]='Посажен'
+			relsost()
+		}
+		p3.onclick=function () {
+			aa=Math.floor(x/122)+1
+			sost[aa-1]='Убит'
+			relsost()
+		}
+	}
+relvis.onclick=function () {
+	vistavv=[]
+	vistavlenii.innerHTML=vistavv
+}
+</script>
+</body>
+</html>

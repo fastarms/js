@@ -29,7 +29,7 @@
   		width: 120px;
   		height: 100px;
   		border: 0.1px solid black;
-  		display: inline-block;
+  		display: inline-block
   	}
   	.contmenu{
   		position: absolute;
@@ -68,6 +68,13 @@ window.mafia=[]
 window.kom=0
 window.don=0
 window.sost=[]
+window.pics=
+	 {picпосажен:'https://pngimg.com/uploads/jail/jail_PNG47.png',
+	  picубит:'https://pngfon.ru/wp-content/gallery/krasnyj-krestik/krasnyj-krestik-pngfon-9.png',
+	  picмирный:'https://sun1-18.userapi.com/LcUFlTv2eoUCA9phQyrRZUvUNsmgWxfw6tnl6A/6fHzET_p8Lo.jpg',
+	  picмафия:"https://mirmafii.com/wp-content/uploads/2019/10/Kakie-roli-est-v-igre-Mafiya.jpg",
+	  picкоммисар:'https://static10.tgstat.ru/channels/_0/92/92f5279508c42befa6fd80386bdf4fe3.jpg',
+	  picдон:'https://est.ua/f/_articles/blogs/38124.jpg'}
 function relsost() {
 	ssss.innerHTML=''
 	for (var i = 1; i < sost.length+1; i++) {
@@ -94,11 +101,10 @@ function relsost() {
 				}
 			}
 		}
-
 		if (i!==sost.length) {ssss.append(',  ')}
 		else{ssss.append('.')}
-		if (mafia.length==mir.length) {alert('Победа мафии'); location.reload()} 
-		if (mafia.length==0) {alert('Победа мирных'); location.reload()}
+		if (mafia.length==mir.length) {alert('Победа мафии'); break} 
+		if (mafia.length==0) {alert('Победа мирных'); break}
 	}
 console.log(mafia, mir)	
 }
@@ -138,21 +144,28 @@ function pok(){
 			return false}
 		rect.className='blo'
 		rect.innerHTML=i
-		
+		img=document.createElement('img')
+		img.style.width='100%'
+		img.style.height='80%'
+		rect.append(img)
 		if (mir.includes(i)) {
 			if (i==kom) {
-				rect.append('  коммисар')
+				//rect.append('  коммисар')
+				img.src='https://static10.tgstat.ru/channels/_0/92/92f5279508c42befa6fd80386bdf4fe3.jpg'
 			}
 			else{
-				rect.append('  мирный')
+				//rect.append('  мирный')
+				img.src='https://sun1-18.userapi.com/LcUFlTv2eoUCA9phQyrRZUvUNsmgWxfw6tnl6A/6fHzET_p8Lo.jpg'
 			}
 		}	
 		if (mafia.includes(i)) {
 			if (i==don) {
-				rect.append('  дон')
+				//rect.append('  дон')
+				img.src='https://est.ua/f/_articles/blogs/38124.jpg'
 			}
 			else{
-				rect.append('  мафия')
+				//rect.append('  мафия')
+				img.src='https://mirmafii.com/wp-content/uploads/2019/10/Kakie-roli-est-v-igre-Mafiya.jpg'
 			}
 		}	
 		
@@ -204,6 +217,7 @@ function pok(){
 			relsost()
 		}
 		p3.onclick=function () {
+			this.src='https://pngimg.com/uploads/jail/jail_PNG47.png'
 			aa=Math.floor(x/122)+1
 			sost[aa-1]='Убит'
 			pp=document.getElementsByClassName('classSost')

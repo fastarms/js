@@ -35,7 +35,8 @@
   		position: absolute;
   		width: 200px;
   		height: 200px;
-  		background: lightgray;  	
+  		background: black; 
+  		color:white; 	
   		z-index: 9200;	
   	}
   	.econtmenu{
@@ -45,11 +46,29 @@
   		text-align: center; 		
   	}
   	.econtmenu:hover{
-  		border: 0.1px solid black;
+  		border: 0.1px solid red;
   	}
   	#relvis{
   		width: 50px;
   		margin-top:10px; 
+  	}
+  	#relvis2{
+  		position: absolute;
+  		left: 1360px;
+  		top: 190px;
+  		width: 50px;
+  		height: 24px;
+  		display: none
+  	}
+  	#endday{
+  		position: absolute;
+  		left: 1360px;
+  		border:none;
+  		width: 100px;
+  		height: 100px;
+  		top: 40px;
+  		display: none;
+  		background: inherit;
   	}
   </style>
 </head>
@@ -59,8 +78,10 @@
 <input type="button" value="Сгенерировать" id="gener">
 <div id="polya"></div>
 <p id="nalcm" style="display: none"></p>
-<input type="button" id="relvis" value="clear"><span>выставлены:  </span><span id="vistavlenii"></span><br>
+<input type="button" id="relvis" value="clear" style="display: none"><span style="display: none" id="relvis1">выставлены:  </span><span id="vistavlenii"></span><br>
 <span style="display: none">игроки:  </span><span style="display: none" id="ssss"></span>
+<input type="button" id="relvis2" value="clear">
+<button id="endday">Конец хода</button>
 <script type="text/javascript">
 window.mir=[]
 window.vistavv=[]
@@ -109,6 +130,10 @@ function relsost() {
 console.log(mafia, mir)	
 }
 gener.onclick=function () {
+	relvis.style.display='inline'
+	relvis1.style.display='inline'
+	relvis2.style.display='inline'
+	endday.style.display='inline'
 	ki=+kolvoigr.value+1
 	km=+kolvomaf.value+1
 	zzzz=0
@@ -174,9 +199,15 @@ function pok(){
 		p.innerHTML='Жив'
 		p.className='classSost'
 		rect.append(p)
-		polya.append(rect)	
-			
-			
+		inn=document.createElement('input')
+		inn.type='text'
+		inn.style.width='120px'
+		inn.className='innn'
+		inn.oninput=function () {
+			this.value=this.value+', '
+		}
+		rect.append(inn)		
+		polya.append(rect)			
 	}
 }
 	function cm(x, y) {
@@ -232,6 +263,12 @@ function pok(){
 relvis.onclick=function () {
 	vistavv=[]
 	vistavlenii.innerHTML=vistavv
+}
+relvis2.onclick=function () {
+	i=document.getElementsByClassName('innn')
+	for(let item of i){
+		item.value=' '
+	}
 }
 </script>
 </body>

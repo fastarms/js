@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>generator password</title>
+  <style type="text/css">
+  	#passs{
+  		position: absolute;
+  		left: 38%;
+  		top: 5%;
+  		width: 24%;
+  		height: 4%;
+  		font-size: 200%;
+  	}
+  	#g{
+  		position: absolute;
+  		left: 46%;
+  		top: 10%;
+  		width: 8%;
+  		height: 4%;
+  		font-size: 160%;
+  	}
+  </style>
+</head>
+<body>
+	<input type="text" id="passs"><br>
+	<input type="button" id='g' value="gener" onclick="gen()">
+<script type="text/javascript">
+window.symbols = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+function gen() {
+	pass=[]
+	for (var i = 0; i < 20; i++) {
+		a=Math.floor(Math.random()*symbols.length)
+		pass.push(symbols[a])		
+}
+p=pass.join('')
+passs.value=p
+}
+</script>
+</body>
+</html>
